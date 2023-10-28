@@ -49,7 +49,7 @@
 						</div>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="?url_id=usuarios">
+						<a class="menu-link" href="?url_id=gestion_usuarios">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -82,7 +82,7 @@
 						</div>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="?url_id=sedes">
+						<a class="menu-link" href="?url_id=gestion_sedes">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -116,7 +116,7 @@
 						</div>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="?url_id=orden">
+						<a class="menu-link" href="?url_id=gestion_salas">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>

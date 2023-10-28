@@ -31,7 +31,7 @@
                             <!--end::Separator-->
                             <!--begin::Content-->
 
-                            
+
                             <form class="form" action="?url_id=gestion_personal" method="POST" id="consultar_personal" name="consultar_personal" enctype="multipart/form-data">
                                 <input type="hidden" name="formulario" id="formulario" value="consultar_personal">
                                 <div class="scroll-y mh-300px mh-lg-325px">
@@ -55,18 +55,11 @@
                                 </div>
                             </form>
                         </div>
-
-                        <?php
-                        if ($_SESSION['administrador'] == 1) {
-                        ?>
-                            <!--begin::Action-->
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key">
-                                Crear Usuarios
-                            </a>
-                            <!--end::Action-->
-                        <?php
-                        }
-                        ?>
+                        <!--begin::Action-->
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key">
+                            Crear Usuarios
+                        </a>
+                        <!--end::Action-->
                         <!--end::Crear-->
                     </div>
 
@@ -123,7 +116,7 @@
                                                     </a>
                                             <?php
                                                 }
-                                            }else {
+                                            } else {
                                                 echo $fila['estado'];
                                             }
                                             ?>
