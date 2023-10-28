@@ -3,13 +3,7 @@
 <div class="aside-menu flex-column-fluid pt-0 pb-5 py-lg-5" id="kt_aside_menu">
 	<!--begin::Aside menu-->
 	<div id="kt_aside_menu_wrapper" class="w-100 hover-scroll-overlay-y scroll-ps d-flex" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu" data-kt-scroll-offset="0" style="padding-top: 350px;">
-
 		<div id="kt_aside_menu" class="menu menu-column menu-title-gray-600 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-icon-gray-500 menu-arrow-gray-500 fw-bold fs-6" data-kt-menu="true">
-			<div id="cargando" class="col-lg-12">
-			</div>
-			<br>
-			<br>
-			<br>
 			<div class="menu-item py-3" data-step="3" data-intro="Clic en el modulo deseado para ingresar o desplegar las opciones complementarias">
 				<a class="menu-link active" href="?url_id=personal" title="Inicio" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick=cargando()>
 					<span class="menu-icon" style="background-color: #DD2E44">
@@ -33,7 +27,7 @@
 				</div>
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
-				<span class="menu-link" title="Solicitudes Servicio al Cliente" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+				<span class="menu-link" title="Usuarios" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 					<span class="menu-icon">
 						<!--begin::Svg Icon | path: icons/duotune/abstract/abs037.svg-->
 						<span class="svg-icon svg-icon-2x">
@@ -55,7 +49,7 @@
 						</div>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="?url_id=gestion_personal">
+						<a class="menu-link" href="?url_id=usuarios">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -66,7 +60,7 @@
 
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
-				<span class="menu-link" title="Solicitudes Servicio al Cliente" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+				<span class="menu-link" title="Sedes" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 					<span class="menu-icon">
 						<!--begin::Svg Icon | path: icons/duotune/abstract/abs037.svg-->
 						<span class="svg-icon svg-icon-2x">
@@ -79,20 +73,20 @@
 					</span>
 				</span>
 				<div class="text-align-center" style="text-align: center;">
-					<p style="color:#182A45" ;><small><small>Productos</small></small></p>
+					<p style="color:#182A45" ;><small><small>Sedes</small></small></p>
 				</div>
 				<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4 scroll-y mh-325px">
 					<div class="menu-item">
 						<div class="menu-content">
-							<span class="menu-section fs-5 fw-bolder ps-1 py-1">Productos</span>
+							<span class="menu-section fs-5 fw-bolder ps-1 py-1">Sedes</span>
 						</div>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="?url_id=productos">
+						<a class="menu-link" href="?url_id=sedes">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Gestión de productos</span>
+							<span class="menu-title">Gestión de sedes</span>
 						</a>
 					</div>
 				</div>
@@ -100,7 +94,7 @@
 
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
-				<span class="menu-link" title="Solicitudes Servicio al Cliente" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+				<span class="menu-link" title="Salas" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 					<span class="menu-icon">
 						<!--begin::Svg Icon | path: icons/duotune/abstract/abs037.svg-->
 						<span class="svg-icon svg-icon-2x">
@@ -113,12 +107,12 @@
 					</span>
 				</span>
 				<div class="text-align-center" style="text-align: center;">
-					<p style="color:#182A45" ;><small><small>Ordenes</small></small></p>
+					<p style="color:#182A45" ;><small><small>Salas</small></small></p>
 				</div>
 				<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4 scroll-y mh-325px">
 					<div class="menu-item">
 						<div class="menu-content">
-							<span class="menu-section fs-5 fw-bolder ps-1 py-1">Ordenes</span>
+							<span class="menu-section fs-5 fw-bolder ps-1 py-1">Salas</span>
 						</div>
 					</div>
 					<div class="menu-item">
@@ -126,7 +120,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Gestión de Ordenes</span>
+							<span class="menu-title">Gestión de Salas</span>
 						</a>
 					</div>
 				</div>
