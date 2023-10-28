@@ -27,7 +27,7 @@ header('Strict-Transport-Security max-age=31536000');
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 		body {
-			background: url(assets/media/fondos/inicio.png) no-repeat fixed center;
+			/* background: url(assets/media/fondos/inicio.png) no-repeat fixed center; */
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
