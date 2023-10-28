@@ -153,21 +153,7 @@
                 <input type="hidden" name="formulario" id="formulario" value="crear_personal">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
-                        <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-10 p-6">
-                            <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
-                                    <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="black" />
-                                    <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="black" />
-                                </svg>
-                            </span>
-                            <div class="d-flex flex-stack flex-grow-1">
-                                <div class="fw-bold">
-                                    <h4 class="text-gray-900 fw-bolder">Nota:</h4>
-                                    <div class="fs-6 text-gray-700">Por favor!, diligenciar todos los campos</div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="d-flex flex-column mb-10 fv-row">
                             <div class="row">
                                 <div class="col-6 mb-10">
