@@ -20,9 +20,9 @@ header('Strict-Transport-Security max-age=31536000');
 	?>
 		<script>
 			alert("La sesión ha caducado, por favor ingresar nuevamente");
-			setTimeout(location.href = "https://sicuso.unidadso.com.co", 2000);
+			setTimeout(location.href = " ", 2000);
 		</script>
-		<a href="https://sicuso.unidadso.com.co">
+		<a href=" ">
 			<< INGRESAR NUEVAMENTE>>
 		</a>
 	<?php

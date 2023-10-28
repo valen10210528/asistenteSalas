@@ -30,7 +30,7 @@ function enviar_mail($email, $asunto, $tipo, $nombre_personal, $detalle, $url_id
 			require_once 'src/plugins/PHPMailer-master/PHPMailerAutoload.php';
 			$link = "<tr>
 		                    <td align='center' style='padding: 10px 10px 10px 10px; font-size: 25px; font-family: Nunito, sans-serif; font-weight: normal; color: #333333;' class='padding-copy' colspan='2'>
-		                        <a href='https://sicuso.unidadso.com.co' target='_blank' style='font-size: 15px; font-family: Nunito, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #0764A9; border-top: 10px solid #0764A9; border-bottom: 10px solid #0764A9; border-left: 20px solid #0764A9; border-right: 20px solid #0764A9; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;' class='mobile-button'>Ingresar a REPAIR &rarr;</a>
+		                        <a href=' ' target='_blank' style='font-size: 15px; font-family: Nunito, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #0764A9; border-top: 10px solid #0764A9; border-bottom: 10px solid #0764A9; border-left: 20px solid #0764A9; border-right: 20px solid #0764A9; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;' class='mobile-button'>Ingresar a ASIS SALAS &rarr;</a>
 		                    </td>
 					</tr>";
 			break;

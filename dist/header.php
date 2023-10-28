@@ -34,7 +34,7 @@
 		
 		<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
 			<!--begin::Heading-->
-			<h1 class="d-flex flex-column text-dark fw-bolder my-1" data-step="1" data-intro="Bienvenido! a REPAIR">
+			<h1 class="d-flex flex-column text-dark fw-bolder my-1" data-step="1" data-intro="Bienvenido! a ASIS SALAS">
 				<!--<span ><img src=""><img src="logos/icono/sicusoblanco.png" style="max-height: 30px;"></span>-->
 				<span class="text-white fs-1"><?php echo $name_page ?></span>
 				<small class="text-gray-600 fs-7 fw-normal pt-2"><?php echo $desc_page ?></small>

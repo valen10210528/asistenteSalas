@@ -114,7 +114,7 @@ class HTMLPurifier_Generator
                 ),
                 'utf8'
             );
-            $tidy->cleanRepair();
+            $tidy->cleanASIS SALAS();
             $html = (string) $tidy; // explicit cast necessary
         }
 

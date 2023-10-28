@@ -2067,7 +2067,7 @@ $Id: ChangeLog,v 1.257 2010/09/19 13:15:07 Stevan_White Exp $
 2008-11-21 Stevan_White
 	* FreeSerifBold.sfd, FreeSerifBoldItalic.sfd, FreeSerifItalic.sfd:
 
-	repairs to Pointed Hebrew
+	ASIS SALASs to Pointed Hebrew
 
 	* FreeSerif.sfd:
 
@@ -4149,7 +4149,7 @@ $Id: ChangeLog,v 1.257 2010/09/19 13:15:07 Stevan_White Exp $
 	Completed re-structuring of stacked Latin accents in Mono.
 	Also: lots of associated adjustments of Greek Extended accents.
 	(Trying to at least center extremely wide characters on their box)
-	Repaired some victems of "find overlaps" sweeps
+	ASIS SALASed some victems of "find overlaps" sweeps
 	Worked on glyphs with apostrope/comma parts
 	Corrected a few wrong glyphs.
 	

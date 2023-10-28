@@ -4,7 +4,7 @@
 
 	date_default_timezone_set('America/Bogota');
 
-	$name_page = "REPAIR";
+	$name_page = "ASIS SALAS";
 	
 	$desc_page = "By Unidad de Salud Ocupacional";
 

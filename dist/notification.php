@@ -28,7 +28,7 @@
 				<div class="separator my-2"></div>
 				<!--end::Menu separator-->
 				<div class="menu-item px-5">
-					<a href="https://sicuso.unidadso.com.co" class="menu-link px-5">Salida Segura</a>
+					<a href="authentication/flows/basic/index.php" class="menu-link px-5">Salida Segura</a>
 				</div>
 				<!--end::Menu item-->
 				<!--begin::Menu separator-->

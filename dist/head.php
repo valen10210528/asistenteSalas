@@ -1,9 +1,9 @@
 <?php
 
-$b_title = "REPAIR";
+$b_title = "ASIS SALAS";
 $b_description = "Sistema de Informacion Clinica y Administrativa de la Unidad de Salud Ocupacional";
 $b_keywords = "sicuso, unidad, salud, ocupacional, uso";
-$b_url = "https://sicuso.unidadso.com.co";
+$b_url = " ";
 $b_url_business = "https://unidadso.com.co";
 $b_logo = "https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png";
 $b_favicon = "assets/media/logos/logo.ico";

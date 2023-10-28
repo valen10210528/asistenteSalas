@@ -7,9 +7,9 @@
 			<script>
 				alert("La sesión a caducado, por favor ingresar nuevamente");
 				
-				setTimeout (location.href="https://sicuso.unidadso.com.co", 2000);
+				setTimeout (location.href=" ", 2000);
 			</script>
-			<a href="https://sicuso.unidadso.com.co" > << INGRESAR NUEVAMENTE >> </a>
+			<a href=" " > << INGRESAR NUEVAMENTE >> </a>
 			<?php
 			exit();
 		}

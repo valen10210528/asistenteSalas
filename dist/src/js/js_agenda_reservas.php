@@ -680,7 +680,7 @@
                                                         }), e.render(), p.reset();
                                                         // console.log("Antes de abrir la nueva ventana");
 
-                                                        var url = "https://sicuso.unidadso.com.co/dist/index_impresion.php?url_id=orden_sede_detalle_impresion&id=" + data.orden + "&sede=" + data.sede;
+                                                        var url = " /dist/index_impresion.php?url_id=orden_sede_detalle_impresion&id=" + data.orden + "&sede=" + data.sede;
                                                         var ventanaNueva = window.open(url, "_blank");
 
                                                     }

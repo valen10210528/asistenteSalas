@@ -1530,7 +1530,7 @@
 
 2012-01-28 12:37 +0000 [r2005]  Stevan_White:
 
-	* FreeSerifBold.sfd: Devanagari: various repairs
+	* FreeSerifBold.sfd: Devanagari: various ASIS SALASs
 	  to glyphs and tables
 
 2012-01-28 01:36 +0000 [r2004]  Stevan_White:
@@ -7476,7 +7476,7 @@
 
 	* FreeSerifItalic.sfd,
 	  FreeSerifBoldItalic.sfd,
-	  FreeSerifBold.sfd: repairs to Pointed Hebrew
+	  FreeSerifBold.sfd: ASIS SALASs to Pointed Hebrew
 
 2008-11-21 21:29 +0000 [r1085]  Stevan_White:
 
@@ -10210,7 +10210,7 @@
 	  FreeMonoBoldOblique.sfd: Completed
 	  re-structuring of stacked Latin accents in Mono. Also: lots of
 	  associated adjustments of Greek Extended accents. (Trying to at
-	  least center extremely wide characters on their box) Repaired
+	  least center extremely wide characters on their box) ASIS SALASed
 	  some victems of "find overlaps" sweeps Worked on glyphs with
 	  apostrope/comma parts Corrected a few wrong glyphs. Trying out a
 	  "bent quotes" solution to making primes distinct from quotes.

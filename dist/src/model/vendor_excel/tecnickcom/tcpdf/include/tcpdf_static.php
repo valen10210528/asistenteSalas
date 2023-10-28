@@ -1161,7 +1161,7 @@ class TCPDF_STATIC {
 		// clean up the HTML code
 		$tidy = tidy_parse_string($html, $tidy_options);
 		// fix the HTML
-		$tidy->cleanRepair();
+		$tidy->cleanASIS SALAS();
 		// get the CSS part
 		$tidy_head = tidy_get_head($tidy);
 		$css = $tidy_head->value;
