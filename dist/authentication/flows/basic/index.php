@@ -8,18 +8,19 @@ header('Strict-Transport-Security max-age=31536000');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<base href="../../../">
 	<meta charset="UTF-8">
-	<title>LOGIN | REPAIRLN</title>
-	<meta name="description" content="LOGIN | REPAIRLN  " />
-	<meta name="keywords" content="repairln" />
+	<title>LOGIN | ASIS SALAS</title>
+	<meta name="description" content="LOGIN | ASIS SALAS  " />
+	<meta name="keywords" content="ASIS SALAS" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="utf-8" />
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="LOGIN | REPAIRLN" />
-	<meta property="og:site_name" content="REPAIRLN" />
+	<meta property="og:title" content="LOGIN | ASIS SALAS" />
+	<meta property="og:site_name" content="ASIS SALAS" />
 	<meta property="og:image" content="https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png" />
 	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -61,9 +62,9 @@ header('Strict-Transport-Security max-age=31536000');
 		<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
 			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
-					<div class="card " data-step="1" data-intro="Bienvenido! a REPAIRLN">
+					<div class="card " data-step="1" data-intro="Bienvenido! a ASIS SALAS">
 						<div class="text-center mb-10">
-							<img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="250px"/>
+							<img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="250px" />
 							<div class="text-gray-400 fw-bold fs-4" data-step="2" data-intro="Para Empezar, ingresemos nuestros datos de Identificación en la plataforma!">
 								<a href="#" class="fw-bolder" style="color: rgb(49,170,179);">Ingrese sus Credenciales</a>
 							</div>
@@ -74,20 +75,6 @@ header('Strict-Transport-Security max-age=31536000');
 								<div class="tab-pane fade show active" id="kt_tab_pane_7" role="tabpanel">
 									<form class="form" novalidate="novalidate" name="ingreso" id="ingreso" action="seguridad/verificar.php" enctype="multipart/form-data" method="post">
 										<input type="hidden" name="formulario" id="formulario" value="ingreso">
-										<div class="fv-row mb-10">
-											<script type="text/javascript">
-												function validar(texto) {
-													if (texto.length < 2) { //si el texo es menor a 2
-														alert('Identificacion muy corta!');
-													} else if (texto.length > 9) { //si el texo es mayor a 8
-														alert('Identificacion muy larga, maximo 9 digitos');
-														document.getElementById("nit").value = "";
-													}
-												}
-											</script>
-											<label class="required form-label fw-bolder text-dark fs-6">Identificacion</label>
-											<input class="form-control form-control-lg form-control-solid" type="number" name="nit" id="nit_empresa" autocomplete="on" placeholder="NIT ó Identificación" onchange="validar(nit_empresa.value);" />
-										</div>
 										<div class="fv-row mb-10">
 											<label class="required form-label fw-bolder text-dark fs-6">Usuario</label>
 											<input class="form-control form-control-lg form-control-solid" type="text" name="username" autocomplete="off" placeholder="Usuario" />
@@ -111,7 +98,7 @@ header('Strict-Transport-Security max-age=31536000');
 											</div>
 										</div>
 										<div class="text-center" data-step="9" data-intro="Para Ingresar a la Plataforma, luego de digitar las credenciales de acceso, Clic en el boton Ingresar!">
-											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style= "background-color: rgb(49,170,179);color:white">
+											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style="background-color: rgb(49,170,179);color:white">
 												<span class="indicator-label">Ingresar</span>
 												<span class="indicator-progress">Espere por favor...
 													<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -126,7 +113,7 @@ header('Strict-Transport-Security max-age=31536000');
 			</div>
 			<div class="d-flex flex-center flex-column-auto p-10">
 				<div class="d-flex align-items-center fw-bold fs-6">
-					<a href="" class="text-muted text-hover-primary px-2">RepairLN</a>
+					<a href="" class="text-muted text-hover-primary px-2">ASIS SALAS</a>
 					<a href="" class="text-muted text-hover-primary px-2">Contacto</a>
 				</div>
 			</div>
@@ -139,4 +126,5 @@ header('Strict-Transport-Security max-age=31536000');
 	<script src="assets/js/scripts.bundle.js"></script>
 	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
 </body>
+
 </html>

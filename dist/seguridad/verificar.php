@@ -9,15 +9,15 @@ ini_set('display_errors', '1');
 
 <head>
 	<meta charset="UTF-8">
-	<title>VERIFICAR | REPAIRLN</title>
-	<meta name="description" content="VERIFICAR | REPAIRLN  " />
+	<title>VERIFICAR | ASIS SALAS </title>
+	<meta name="description" content="VERIFICAR | ASIS SALAS  " />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="utf-8" />
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="VERIFICAR | REPAIRLN" />
+	<meta property="og:title" content="VERIFICAR | ASIS SALAS" />
 	<meta property="og:url" content=" " />
-	<meta property="og:site_name" content="REPAIRLN" />
+	<meta property="og:site_name" content="ASIS SALAS" />
 	<meta property="og:image" content="https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png" />
 	<link rel="canonical" href=" " />
 	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
@@ -32,7 +32,7 @@ ini_set('display_errors', '1');
 <body>
 	<?php
 
-include "conexion.php";
+	include "conexion.php";
 
 
 	function variable_exterior($nombre)
@@ -54,14 +54,13 @@ include "conexion.php";
 	////////////////// procesamiento de formulario de LogIn para INTRANET
 	if ($nombre_formulario == "ingreso") {
 
-		$nit = variable_exterior("nit");
 		$username = variable_exterior("username");
 		$password = variable_exterior("password");
 
 		if ($username != "" && $password  != "" && $nit  != "") {
-
+			$password = md5($password);
 			$dbm = conectar_mysql();
-			$sql = "SELECT * FROM clientes WHERE `usuario` = '" . $username . "' AND contraseña = '" . $password . "' AND identificacion = '" . $nit . "' AND estado = 'activo'";
+			$sql = "SELECT * FROM usuarios WHERE usuario = '" . $username . "' AND contraseña = '" . $password . "' estado = '1'";
 			$query = $dbm->prepare($sql);
 			$query->execute();
 			$datos = $query->fetch();
@@ -70,12 +69,10 @@ include "conexion.php";
 				$_SESSION["id_usuario"] = $datos["id"];
 				$_SESSION["identificacion"] = $datos["identificacion"];
 				$_SESSION["nombre"] = $datos["nombre"];
-				$_SESSION["correo"] = $datos["correo"];
-				$_SESSION["direccion"] = $datos["direccion"];
-				$_SESSION["administrador"] = $datos["administrador"];
-				?>
+				$_SESSION["id_rol"] = $datos["id_rol"];
+	?>
 				<script type="text/javascript">
-					location.href = '../index.php?url_id=personal';
+					location.href = '../index.php?url_id=agenda_citas';
 				</script>
 			<?php
 			} else {

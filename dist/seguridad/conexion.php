@@ -10,12 +10,11 @@ date_default_timezone_set("America/Bogota");
 function conectar_mysql()
 {
 	$dbm = "";
-
 	$motor = "mysql";
 	$servidor = 'localhost:3306';
 	$usuario = 'root';
 	$clave = '';
-	$baseDatos = 'repair'; //Base de datos de SQL Server
+	$baseDatos = 'asistentesalas'; //Base de datos de SQL Server
 	$dsn = $motor . ":host=" . $servidor . ";dbname=" . $baseDatos;
 
 	try {
@@ -25,24 +24,6 @@ function conectar_mysql()
 	}
 
 	return $dbm;
-
-
-	// $dbm = "";
-
-	// $motor = "mysql";
-	// $servidor = '190.85.248.79:3306';
-	// $usuario = 'usr_repair';
-	// $clave = '12345678';
-	// $baseDatos = 'repair'; //Base de datos de SQL Server
-	// $dsn = $motor . ":host=" . $servidor . ";dbname=" . $baseDatos;
-
-	// try {
-	// 	$dbm = new PDO($dsn, $usuario, $clave);
-	// } catch (PDOException $e) {
-	// 	echo "Error en conexiones: " . $e->getMessage();
-	// }
-
-	// return $dbm;
 }
 
 ?>

@@ -13,16 +13,16 @@ header('Strict-Transport-Security max-age=31536000');
 <head>
 	<base href="../../../">
 	<meta charset="UTF-8">
-	<title>SOLICITUD DE DOCUMENTOS | REPAIRLN</title>
-	<meta name="description" content="LOGIN | REPAIRLN  " />
+	<title>SOLICITUD DE DOCUMENTOS | ASIS SALAS</title>
+	<meta name="description" content="LOGIN | ASIS SALAS  " />
 	<meta name="keywords" content="sicuso, unidad, salud, ocupacional, uso" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="utf-8" />
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="LOGIN | REPAIRLN" />
+	<meta property="og:title" content="LOGIN | ASIS SALAS" />
 	<meta property="og:url" content=" " />
-	<meta property="og:site_name" content="REPAIRLN" />
+	<meta property="og:site_name" content="ASIS SALAS" />
 	<meta property="og:image" content="https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png" />
 	<link rel="canonical" href=" " />
 	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
