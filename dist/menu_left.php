@@ -12,10 +12,10 @@
 			<br>
 			<div class="menu-item py-3" data-step="3" data-intro="Clic en el modulo deseado para ingresar o desplegar las opciones complementarias">
 				<a class="menu-link active" href="?url_id=personal" title="Inicio" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick=cargando()>
-					<span class="menu-icon" style="background-color: #31AAB3">
+					<span class="menu-icon" style="background-color: #DD2E44">
 						<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
 						<span class="svg-icon svg-icon-2x">
-							<span class="svg-icon svg-icon svg-icon-2x" style="background-color: #31AAB3">
+							<span class="svg-icon svg-icon svg-icon-2x" style="background-color: #DD2E44">
 								<!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Home/Home.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 										<rect x="0" y="0" width="24" height="24" />
@@ -29,7 +29,7 @@
 					</span>
 				</a>
 				<div class="text-align-center" style="text-align: center;">
-					<p style="color:#31AAB3" ;><small><small>Inicio</small></small></p>
+					<p style="color:#DD2E44" ;><small><small>Inicio</small></small></p>
 				</div>
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">

@@ -57,14 +57,15 @@ ini_set('display_errors', '1');
 		$username = variable_exterior("username");
 		$password = variable_exterior("password");
 
-		if ($username != "" && $password  != "" && $nit  != "") {
+		if ($username != "" && $password  != "" ) {
 			$password = md5($password);
 			$dbm = conectar_mysql();
-			$sql = "SELECT * FROM usuarios WHERE usuario = '" . $username . "' AND contraseña = '" . $password . "' estado = '1'";
+			$sql = "SELECT * FROM usuarios WHERE usuario = '" . $username . "' AND contraseña = '" . $password . "' AND estado = '1'";
 			$query = $dbm->prepare($sql);
 			$query->execute();
 			$datos = $query->fetch();
 
+			
 			if ($datos !== false || $datos != "") {
 				$_SESSION["id_usuario"] = $datos["id"];
 				$_SESSION["identificacion"] = $datos["identificacion"];
@@ -72,7 +73,7 @@ ini_set('display_errors', '1');
 				$_SESSION["id_rol"] = $datos["id_rol"];
 	?>
 				<script type="text/javascript">
-					location.href = '../index.php?url_id=agenda_citas';
+					location.href = '../index.php?url_id=agenda_reservas';
 				</script>
 			<?php
 			} else {

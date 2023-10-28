@@ -60,3 +60,14 @@ function array_($resultado)
 	}
 	return $var;
 }
+
+
+function array_asociativo($resultado)
+{
+	$var = array();
+	while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
+		$var[] = $fila;
+	}
+	return $var;
+}
+

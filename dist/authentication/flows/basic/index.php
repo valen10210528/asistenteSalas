@@ -21,7 +21,6 @@ header('Strict-Transport-Security max-age=31536000');
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="LOGIN | ASIS SALAS" />
 	<meta property="og:site_name" content="ASIS SALAS" />
-	<meta property="og:image" content="https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png" />
 	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
@@ -57,19 +56,15 @@ header('Strict-Transport-Security max-age=31536000');
 	<link href="../../dist/src/plugins/intro.js-master/introjs.css" rel="stylesheet">
 </head>
 
-<body id="kt_body" style="background-color: black;">
+<body id="kt_body" >
 	<div class="d-flex flex-column flex-root">
 		<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
 			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 					<div class="card " data-step="1" data-intro="Bienvenido! a ASIS SALAS">
-						<div class="text-center mb-10">
-							<img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="250px" />
-							<div class="text-gray-400 fw-bold fs-4" data-step="2" data-intro="Para Empezar, ingresemos nuestros datos de Identificación en la plataforma!">
-								<a href="#" class="fw-bolder" style="color: rgb(49,170,179);">Ingrese sus Credenciales</a>
-							</div>
+						<div class="text-center m-1">
+							<img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="200px" />
 						</div>
-						<br>
 						<div class="card-body">
 							<div class="tab-content" id="myTabContent" data-step="7" data-intro="Ingrese las credenciales de Acceso">
 								<div class="tab-pane fade show active" id="kt_tab_pane_7" role="tabpanel">
@@ -98,7 +93,7 @@ header('Strict-Transport-Security max-age=31536000');
 											</div>
 										</div>
 										<div class="text-center" data-step="9" data-intro="Para Ingresar a la Plataforma, luego de digitar las credenciales de acceso, Clic en el boton Ingresar!">
-											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style="background-color: rgb(49,170,179);color:white">
+											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style="background-color: #DD2E44;color:white">
 												<span class="indicator-label">Ingresar</span>
 												<span class="indicator-progress">Espere por favor...
 													<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
