@@ -1,16 +1,16 @@
 <?php
 
-$b_title = "ASIS SALAS";
-$b_description = "Sistema de Informacion Clinica y Administrativa de la Unidad de Salud Ocupacional";
-$b_keywords = "sicuso, unidad, salud, ocupacional, uso";
+$b_title = "ASIS SALAS 3";
+$b_description = "";
+$b_keywords = "";
 $b_url = " ";
-$b_url_business = "https://unidadso.com.co";
-$b_logo = "https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png";
+$b_url_business = "";
+$b_logo = "";
 $b_favicon = "assets/media/logos/logo.ico";
 $b_icon = "assets/media/logos/icono.png";
 $b_color_p = "#0764A9";
-$b_business_name = "Unidad de Salud Ocupacional SAS";
-$b_business_id = "805002036-4";
+$b_business_name = "";
+$b_business_id = "";
 
 
 ?>
