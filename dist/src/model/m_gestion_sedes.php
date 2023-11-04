@@ -53,7 +53,7 @@ if ($formulario == "actualizar_sede" && $formulario != "") {
 
     $sql = "UPDATE sedes SET nombre = '$nombre_sede', direccion = '$direccion_sede', estado = '$estado' WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
-    if ($query->execute()) {
+    if ($query->execute()) { 
     ?>
         <script>
             alert("Sede actualizada correctamente");
