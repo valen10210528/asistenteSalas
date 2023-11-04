@@ -140,7 +140,7 @@
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
             <div class="modal-header" id="kt_modal_create_api_key_header">
-                <h2>Crear Personal</h2>
+                <h2>Crear Usuario</h2>
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                     <span class="svg-icon svg-icon-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -162,43 +162,45 @@
                                     <input required name="numero_identificacion" type="number" class="form-control form-control-solid" id="numero_identificacion" />
                                 </div>
                                 <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Administrador</label>
-                                    <select required name="administrador" id="administrador" class="form-select form-select-lg mb-3">
-                                        <option value="0" selected>No</option>
-                                        <option value="1">Si</option>
+                                    <label class="required fs-5 fw-bold mb-2">Tipo identificación</label>
+                                    <select required name="tipo_id" id="tipo_id" class="form-select form-select-lg mb-3">
+                                        <option value="0" selected>CC</option>
+                                        <option value="1">TI</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Nombre completo</label>
-                                    <input required name="nombre_completo" type="text" class="form-control form-control-solid" id="nombre_completo" />
+                                    <label class="required fs-5 fw-bold mb-2">Nombres</label>
+                                    <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" />
                                 </div>
                                 <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Correo</label>
-                                    <input required name="correo" type="email" class="form-control form-control-solid" id="correo" />
+                                    <label class="required fs-5 fw-bold mb-2">Apellidos</label>
+                                    <input required name="apellidos" type="text" class="form-control form-control-solid" id="apellidos" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Dirección</label>
-                                    <input required name="direccion" type="text" class="form-control form-control-solid" id="direccion" />
+                                    <label class="required fs-5 fw-bold mb-2">Celular</label>
+                                    <input required name="celular" type="text" class="form-control form-control-solid" id="celular" />
                                 </div>
                                 <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Telefono</label>
-                                    <input required name="telefono" type="number" class="form-control form-control-solid" id="telefono" />
+                                    <label class="required fs-5 fw-bold mb-2">Email</label>
+                                    <input required name="email" type="email" class="form-control form-control-solid" id="email" />
+                                </div>
+                            <div>
+                                
+                            </div class="row">
+                                <div class="col-6 mb-10">
+                                    <label class="required fs-5 fw-bold mb-2">Rol</label>
+                                    <select required name="rol" id="rol" class="form-select form-select-lg mb-3">
+                                        <option value="0" selected>Seleccione ...</option>
+                                        <option value="1">Administrador</option>
+                                        <option value="2">Profesor</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Usuario</label>
-                                    <input required name="usuario" type="text" class="form-control form-control-solid" id="usuario" />
-                                </div>
-                                <div class="col-6 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Contraseña</label>
-                                    <input required name="contraseña" type="text" class="form-control form-control-solid" id="contraseña" />
-                                </div>
-                            </div>
+
 
                         </div>
                         <div class="modal-footer flex-center">
