@@ -6,13 +6,13 @@
 <!--begin::Page Custom Javascript(used by this page)-->
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
-<script>
-    var documentTitle_servicios_sede = 'Usuarios *';
 
+<script>
+    var documentTitle_servicios_sede = 'Sedes *';
     var dt_servicios_sede = $('#kt_customers_table').DataTable({
         "info": false,
         'order': [],
-        'pageLength': 10,
+        'pageLength': 5,
         'dom': '<"row"<"col-sm-6 col-md-4"B><"col-sm-6 col-md-4"<" btn-group">><"col-sm-6 col-md-4"f>>t<"row"<"col-sm-6 col-md-6"l><"col-sm-6 col-md-6"p>>',
         'responsive': true,
         'buttons': [{

@@ -10,10 +10,19 @@ date_default_timezone_set('America/Bogota');
 // $formulario = variable_exterior("formulario");
 
 $dbm = conectar_mysql();
-$formulario = $_POST['formulario'];
+if (isset($_POST['formulario'])) {
+    $formulario = $_POST['formulario'];
+    # code...
+}else{
+    $formulario = "";
+}
 
+$sql = "SELECT * FROM sedes";
+$query = $dbm->prepare($sql);
+$query->execute();
+$sedes = array_asociativo($query);
 
-if ($formulario == "crear_sede") {
+if ($formulario == "crear_sede" && $formulario != "") {
 
     $nombre_sede = $_POST['nombre_sede'];
     $direccion_sede = $_POST['direccion_sede'];
@@ -22,9 +31,9 @@ if ($formulario == "crear_sede") {
     $query = $dbm->prepare($sql);
     if ($query->execute()) {
         // EJECUTÓ BIEN
-?>
+ ?>
         <script>
-            alert("La sede se insertó correctamente DOS");
+            alert("La sede se insertó correctamente");
         </script>
 
     <?php
@@ -35,9 +44,13 @@ if ($formulario == "crear_sede") {
             alert("Error! La sede no se insertó correctamente");
         </script>
 
-<?php
+ <?php
     }
 }
+
+
+
+
 
 
 
