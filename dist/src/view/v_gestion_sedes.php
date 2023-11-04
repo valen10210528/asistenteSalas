@@ -50,7 +50,6 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                     <div class="modal fade" id="kt_modal_create_api_key2<?php echo $fila['id'] ?>" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered mw-650px">
                                             <div class="modal-content">
@@ -114,7 +113,6 @@
                             <?php
                                 }
                             }
-
                             ?>
 
                         </tbody>
