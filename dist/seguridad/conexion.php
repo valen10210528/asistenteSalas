@@ -7,7 +7,7 @@ mb_http_output("UTF-8");
 setlocale(LC_TIME, "spanish");
 date_default_timezone_set("America/Bogota");
 
-function conectar_mysql()
+function conectar_mysql() 
 {
 	$dbm = "";
 	$motor = "mysql";
