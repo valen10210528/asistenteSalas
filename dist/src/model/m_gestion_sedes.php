@@ -48,9 +48,10 @@ if ($formulario == "crear_sede" && $formulario != "") {
 if ($formulario == "actualizar_sede" && $formulario != "") {
     $nombre_sede = $_POST['nombre_sede'];
     $direccion_sede = $_POST['direccion_sede'];
+    $estado = $_POST['estado'];
     $id = $_POST['id'];
 
-    $sql = "UPDATE sedes SET nombre = '$nombre_sede', direccion = '$direccion_sede' WHERE id ='$id' ";
+    $sql = "UPDATE sedes SET nombre = '$nombre_sede', direccion = '$direccion_sede', estado = '$estado' WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
     if ($query->execute()) {
     ?>
