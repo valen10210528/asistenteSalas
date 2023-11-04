@@ -1,5 +1,5 @@
 <!--begin::Header tablet and mobile-->
-<div class="header-mobile py-3" style="background-color: #DD2E44;" >
+<div class="header-mobile py-3" style="background-color: #FFC300;" >
 	<!--begin::Container-->
 	<div class="container d-flex flex-stack">
 		<!--begin::Mobile logo-->
@@ -27,7 +27,7 @@
 </div>
 <!--end::Header tablet and mobile-->
 <!--begin::Header-->
-<div id="kt_header" data-step="6" data-intro="En la Barra de Herramientas tendremos acceso a aplicaciones y notificaciones rapidas en cualquier momento" style="background-color: #DD2E44" class="header py-6 py-lg-0" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{lg: '300px'}" >
+<div id="kt_header" data-step="6" data-intro="En la Barra de Herramientas tendremos acceso a aplicaciones y notificaciones rapidas en cualquier momento" style="background-color: #FFC300" class="header py-6 py-lg-0" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{lg: '300px'}" >
 	<!--begin::Container-->
 	<div class="header-container container-xxl" >
 		<!--begin::Page title-->

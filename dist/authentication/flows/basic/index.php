@@ -93,7 +93,7 @@ header('Strict-Transport-Security max-age=31536000');
 											</div>
 										</div>
 										<div class="text-center" data-step="9" data-intro="Para Ingresar a la Plataforma, luego de digitar las credenciales de acceso, Clic en el boton Ingresar!">
-											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style="background-color: #DD2E44;color:white">
+											<button type="submit" id="kt_sign_in_submit" class="btn btn-lg w-100 mb-5" style="background-color: #FFC300;color:white">
 												<span class="indicator-label">Ingresar</span>
 												<span class="indicator-progress">Espere por favor...
 													<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
