@@ -36,7 +36,7 @@
                                 <input type="hidden" name="formulario" id="formulario" value="consultar_personal">
                                 <div class="scroll-y mh-300px mh-lg-325px">
                                     <div class="px-7 py-5">
-                                            <div class="mb-10">
+                                        <div class="mb-10">
                                             <label class="form-label fs-5 fw-bold mb-3">Nombre:</label>
                                             <input id="nombre" name="nombre" type="text" class="form-control form-control-solid" />
                                         </div>
@@ -151,16 +151,14 @@
                                     <label class="required fs-5 fw-bold mb-2">Sede: </label>
                                     <select required class="form-select form-select-solid fw-bolder" data-placeholder="Select option" id="kt_modal_add_event_sede_paciente" name="calendar_event_name">
                                         <option value="" selected>Seleccionar Sede </option>
-                                        <!-- <?
-                                                foreach ($sedes as $key) {
-                                                ?>
-													<option value="<? echo $key['id'] ?>" ><? echo $key['nombre'] ?></option>
-												<?
-                                                }
-                                                ?> -->
-                                        <option value="Melendez">Melendez</option>
-                                        <option value="Lopez">Lopez</option>
-                                        <option value="Pance">Pance</option>
+                                        <?php
+                                        foreach ($sedes as $key) {
+                                        ?>
+                                            <option value="<?php echo $key['id'] ?>"><?php echo $key['nombre'] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+
                                     </select>
                                 </div>
                             </div>
