@@ -24,7 +24,7 @@ if ($formulario == "crear_sede") {
         // EJECUTÓ BIEN
 ?>
         <script>
-            alert("La sede se insertó correctamente");
+            alert("La sede se insertó correctamente DOS");
         </script>
 
     <?php
