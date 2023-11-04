@@ -5,7 +5,6 @@
 				<div class="card-header">
 					<h2 class="card-title fw-bolder">Calendario de reservas</h2>
 					<div class="card-toolbar">
-
 						<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
 							<span class="svg-icon svg-icon-2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -14,28 +13,20 @@
 							</span>
 							Filtro
 						</button>
-
 						<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px " data-kt-menu="true" id="kt-toolbar-filter">
-							<!--begin::Header-->
 							<div class="px-7 py-5">
 								<div class="fs-4 text-dark fw-bolder">Opciones de Filtros</div>
 							</div>
-							<!--begin::Separator-->
 							<div class="separator border-gray-200"></div>
-							<div class="max-height-300px overflow-y-auto scroll-y mh-325px"> <!-- Agregar estas clases -->
-
+							<div class="max-height-300px overflow-y-auto scroll-y mh-325px">
 								<form class="form" action="?url_id=agenda_reservas" method="POST" id="filtrar" name="filtrar">
 									<div class="px-7 py-5">
 										<div class="mb-10">
 											<label class="form-label fs-5 fw-bold mb-3 required">Seleccionar Sede:</label>
-
 										</div>
-
 										<div class="mb-10">
 											<label class="form-label fs-5 fw-bold mb-3 ">Seleccionar Empresa:</label>
-
 										</div>
-
 										<div class="mb-10">
 											<label class="form-label fs-5 fw-bold mb-3 ">Seleccionar Estado:</label>
 											<select class="form-select form-select-solid fw-bolder " data-kt-select2="true" data-placeholder="Seleccione Estado" data-allow-clear="true" data-kt-customer-table-filter="estado" id="estado" name="estado" data-dropdown-parent="#kt-toolbar-filter">
@@ -45,15 +36,11 @@
 												<option value="con">CONFIRMADA</option>
 											</select>
 										</div>
-
 										<div class="mb-10">
 											<label class="form-label fs-5 fw-bold mb-3 ">Personal que creó el registro:</label>
 											<select class="form-select form-select-solid fw-bolder " data-kt-select2="true" data-placeholder="Seleccione Personal" data-allow-clear="true" data-kt-customer-table-filter="personal" id="personal" name="personal" data-dropdown-parent="#kt-toolbar-filter">
-
-
 											</select>
 										</div>
-
 										<div class="form-group mb-6">
 											<div class="mb-0">
 												<label class="form-label">Documento</label>
@@ -86,19 +73,15 @@
 												<input id="fechafin_crea" name="fechafin_crea" type="date" class="form-control form-control-solid" placeholder="Pick date rage" id="kt_daterangepicker_3" />
 											</div>
 										</div>
-
 										<div class="d-flex justify-content-end">
 											<input type="submit" name="enviar" class="btn btn-primary" value="Filtrar">
 											<input type="hidden" name="formulario" id="formulario" value="filtrar">
 										</div>
-
 									</div>
-
 								</form>
 							</div>
 						</div>
 						<button class="btn btn-flex btn-primary" data-kt-calendar="add">
-							<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 							<span class="svg-icon svg-icon-2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 									<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
@@ -109,9 +92,6 @@
 						</button>
 					</div>
 				</div>
-
-				<!--end::Card header-->
-				<!--begin::Card body-->
 				<div class="card-body">
 					<!--begin::Calendar-->
 					<div id="kt_calendar_app"></div>
@@ -129,28 +109,18 @@
 					<div class="modal-content">
 						<!--begin::Form-->
 						<form class="form" action="#" id="kt_modal_add_event_form">
-							<!--begin::Modal header-->
 							<div class="modal-header">
-								<!--begin::Modal title-->
 								<h2 class="fw-bolder" data-kt-calendar="title">Generar Reserva</h2>
-								<!--end::Modal title-->
-								<!--begin::Close-->
 								<div class="btn btn-icon btn-sm btn-active-icon-primary" id="kt_modal_add_event_close">
-									<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 									<span class="svg-icon svg-icon-1">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 											<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
 											<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
 										</svg>
 									</span>
-									<!--end::Svg Icon-->
 								</div>
-								<!--end::Close-->
 							</div>
-							<!--end::Modal header-->
-							<!--begin::Modal body-->
 							<div class="modal-body py-10 px-lg-17">
-
 								<div class="row row-cols-lg-2 g-10">
 									<div class="col">
 										<div class="fv-row mb-9">
@@ -158,20 +128,17 @@
 											<!-- <input type="text" class="form-control form-control-solid" placeholder="" name="calendar_event_name" /> -->
 											<select required class="form-select form-select-solid fw-bolder" data-placeholder="Select option" id="kt_modal_add_event_sede_paciente" name="calendar_event_name">
 												<option value="" selected>Seleccionar Sede </option>
-												<!-- <?
-														foreach ($sedes as $key) {
-														?>
-													<option value="<? echo $key['id'] ?>" ><? echo $key['nombre'] ?></option>
-												<?
-														}
-												?> -->
-												<option value="Melendez">Melendez</option>
-												<option value="Lopez">Lopez</option>
-												<option value="Pance">Pance</option>
+												<?php
+												foreach ($sedes as $key) {
+												?>
+													<option value="<?php echo $key['id'] ?>"><?php echo $key['nombre'] ?></option>
+												<?php
+												}
+												?>
 											</select>
 										</div>
 									</div>
-									<div class="col">
+									<div class="col" style="display: none;">
 										<div class="fv-row mb-9">
 											<label class="fs-6 fw-bold mb-2 required">Sala:</label>
 											<!-- <input class="form-control form-control-solid" min="0" placeholder="Documento Paciente" type="text" id="kt_modal_add_event_cedula_paciente" name="calendar_event_description"> -->
@@ -183,18 +150,6 @@
 											</select>
 										</div>
 									</div>
-								</div>
-
-								<div class="fv-row mb-9" style="display: none;">
-									<input type="text" class="form-control form-control-solid" placeholder="" name="calendar_event_location" />
-								</div>
-								<div class="fv-row mb-9" style="display: none;">
-									<label class="form-check form-check-custom form-check-solid">
-										<input class="form-check-input" type="checkbox" value="" id="kt_calendar_datepicker_allday" style="display: none;" />
-									</label>
-								</div>
-
-								<div class="row row-cols-lg-3 g-10">
 									<div class="col">
 										<div class="fv-row mb-9">
 											<!--begin::Label-->
@@ -205,6 +160,17 @@
 											<!--end::Input-->
 										</div>
 									</div>
+								</div>
+								<div class="fv-row mb-9" style="display: none;">
+									<input type="text" class="form-control form-control-solid" placeholder="" name="calendar_event_location" />
+								</div>
+								<div class="fv-row mb-9" style="display: none;">
+									<label class="form-check form-check-custom form-check-solid">
+										<input class="form-check-input" type="checkbox" value="" id="kt_calendar_datepicker_allday" style="display: none;" />
+									</label>
+								</div>
+								<div class="row row-cols-lg-3 g-10">
+									
 									<div class="col">
 										<div class="fv-row mb-9">
 											<!--begin::Label-->
@@ -237,8 +203,6 @@
 										</div>
 									</div>
 								</div>
-								<!--end::Input group-->
-								<!--begin::Input group-->
 								<div class="row row-cols-lg-2 g-10" style="display: none;">
 									<div class="col">
 										<div class="fv-row mb-9">
