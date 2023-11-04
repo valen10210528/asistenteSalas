@@ -13,14 +13,11 @@ $dbm = conectar_mysql();
 if (isset($_POST['formulario'])) {
     $formulario = $_POST['formulario'];
     # code...
-}else{
+} else {
     $formulario = "";
 }
 
-$sql = "SELECT * FROM sedes";
-$query = $dbm->prepare($sql);
-$query->execute();
-$sedes = array_asociativo($query);
+
 
 if ($formulario == "crear_sede" && $formulario != "") {
 
@@ -31,7 +28,7 @@ if ($formulario == "crear_sede" && $formulario != "") {
     $query = $dbm->prepare($sql);
     if ($query->execute()) {
         // EJECUTÓ BIEN
- ?>
+?>
         <script>
             alert("La sede se insertó correctamente");
         </script>
@@ -44,20 +41,36 @@ if ($formulario == "crear_sede" && $formulario != "") {
             alert("Error! La sede no se insertó correctamente");
         </script>
 
- <?php
+    <?php
     }
 }
 
 if ($formulario == "actualizar_sede" && $formulario != "") {
-    
+    $nombre_sede = $_POST['nombre_sede'];
+    $direccion_sede = $_POST['direccion_sede'];
+    $id = $_POST['id'];
+
+    $sql = "UPDATE sedes SET nombre = '$nombre_sede', direccion = '$direccion_sede' WHERE id ='$id' ";
+    $query = $dbm->prepare($sql);
+    if ($query->execute()) {
+    ?>
+        <script>
+            alert("Sede actualizada correctamente");
+        </script>
+    <?php
+    } else {
+    ?>
+        <script>
+            alert("Error! La sede no fue actualizada correctamente");
+        </script>
+
+<?php
+    }
 }
-
-
-
-
-
-
-$consulta = "";
+$sql = "SELECT * FROM sedes";
+$query = $dbm->prepare($sql);
+$query->execute();
+$sedes = array_asociativo($query);
 
 
 

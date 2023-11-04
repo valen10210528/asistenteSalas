@@ -170,7 +170,7 @@ header('Strict-Transport-Security max-age=31536000');
 									<li class="nav-item" data-step="4" data-intro="Portal Empresarial para Clientes">
 										<a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_7">Clientes</a>
 									</li>
-									<li class="nav-item" data-step="5" data-intro="Portal Intranet para Empleados de la Unidad de Salud Ocupacional">
+									<li class="nav-item" data-step="5" data-intro="Portal Intranet para Empleados de la ASISTENTE SALAS">
 										<a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_8">Intranet</a>
 									</li>
 									<li class="nav-item" data-step="6" data-intro="Portal de Autogestion para Particulares y Pacientes!">
@@ -570,7 +570,7 @@ header('Strict-Transport-Security max-age=31536000');
 			<div class="d-flex flex-center flex-column-auto p-10">
 				<!--begin::Links-->
 				<div class="d-flex align-items-center fw-bold fs-6">
-					<a href="https://unidadso.com.co" class="text-muted text-hover-primary px-2">Unidad de Salud Ocupacional</a>
+					<a href="https://unidadso.com.co" class="text-muted text-hover-primary px-2">ASISTENTE SALAS</a>
 					<a href="mailto:info@unidadso.com.co" class="text-muted text-hover-primary px-2">Contacto</a>
 				</div>
 				<!--end::Links-->
