@@ -35,7 +35,7 @@ if ($formulario == "crear_sede" && $formulario != "") {
 
     <?php
     } else {
-        // ERROR
+        // ERROR DOS
     ?>
         <script>
             alert("Error! La sede no se insertó correctamente");
