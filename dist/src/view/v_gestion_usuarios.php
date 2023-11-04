@@ -74,11 +74,12 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-185px"></th>
                                 <th class="min-w-185px">Usuario</th>
-                                <th class="min-w-185px">Contraseña</th>
-                                <th class="min-w-125px">Nombre Completo</th>
-                                <th class="min-w-185px">Correo</th>
-                                <th class="min-w-125px">Telefono</th>
-                                <th class="min-w-125px">Dirección</th>
+                                <th class="min-w-125px">Identificación</th>
+                                <th class="min-w-185px">Nombres</th>
+                                <th class="min-w-125px">Apellidos</th>
+                                <th class="min-w-125px">Celular</th>
+                                <th class="min-w-125px">Email</th>
+                                <th class="min-w-125px">Rol</th>
                                 <th class="min-w-125px">Estado</th>
                             </tr>
                         </thead>
