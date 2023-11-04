@@ -150,8 +150,8 @@
                     </span>
                 </div>
             </div>
-            <form id="crear_personal" name="crear_personal" class="form" action="?url_id=gestion_personal" method="POST" onsubmit="return validacion_crear_personal()" enctype="multipart/form-data">
-                <input type="hidden" name="formulario" id="formulario" value="crear_personal">
+            <form id="crear_usuario" name="crear_usuario" class="form" action="?url_id=gestion_personal" method="POST" onsubmit="return validacion_crear_personal()" enctype="multipart/form-data">
+                <input type="hidden" name="formulario" id="formulario" value="crear_usuario">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
 
@@ -212,10 +212,3 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> f1ea75e126c20acd706899209f20e8045f0646d0
