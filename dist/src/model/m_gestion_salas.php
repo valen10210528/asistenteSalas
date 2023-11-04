@@ -14,6 +14,11 @@ $resultados_final = array();
 
 $consulta = "";
 
+$sql = "SELECT * FROM sedes WHERE estado = 1";
+$query = $dbm->prepare($sql);
+$query->execute();
+$sedes = array_asociativo($query);
+
 
 
 ?>
