@@ -16,7 +16,7 @@ $message = $twilio->messages
                   ->create("whatsapp:+573024554814", // to 
                            array( 
                                "from" => "whatsapp:+14155238886",       
-                               "body" => "uso unidad de salud ocupacional prueba 06-12-2021" 
+                               "body" => "uso ASISTENTE SALAS prueba 06-12-2021" 
                            ) 
                   ); 
  

@@ -77,7 +77,7 @@
                                                     </div>
                                                     <div class="m-2 p-2">
                                                         <label class="required fs-5 fw-bold mb-2"> Estado sede</label>
-                                                        <select name="estado" id="estado" class = "form-control">
+                                                        <select name="estado" id="estado" class="form-control">
                                                             <?php
                                                             if ($fila['estado'] == "1") {
                                                             ?>

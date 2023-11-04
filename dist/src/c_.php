@@ -6,6 +6,6 @@
 
 	$name_page = "ASIS SALAS";
 	
-	$desc_page = "By Unidad de Salud Ocupacional";
+	$desc_page = "By ASISTENTE SALAS";
 
 ?>

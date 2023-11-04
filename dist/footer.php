@@ -5,7 +5,7 @@
 		<!--begin::Copyright-->
 		<div class="text-dark order-2 order-md-1">
 			<span class="text-gray-400 fw-bold me-1"><?php echo date("Y") ?>© Creado por</span>
-			<a href="<?php echo $b_url_business ?>" target="_blank" class="text-muted text-hover-primary fw-bold me-2 fs-6">Unidad de Salud Ocupacional</a>
+			<a href="<?php echo $b_url_business ?>" target="_blank" class="text-muted text-hover-primary fw-bold me-2 fs-6">ASISTENTE SALAS</a>
 			<br>
 			<span class="text-gray-300 fw-bold me-1">Build by</span>
 			<a href="https://unidadso.com.co" target="_blank" class="text-gray-300 fw-bold me-1">SINFOCALI</a>
