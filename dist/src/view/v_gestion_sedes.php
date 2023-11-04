@@ -23,6 +23,7 @@
                                 <th class="min-w-185px">Nombre</th>
                                 <th class="min-w-185px">Estado</th>
                                 <th class="min-w-185px">Dirección</th>
+                                <th class="min-w-185px">Editar</th>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
@@ -104,6 +105,7 @@
                                                     </div>
                                                     <div class="m-2 p-2">
                                                         <input type="submit" value="Actualizar sede" class="btn btn-primary">
+                                                        <input type="hidden" id="id" name="id" value="<?php echo $fila['id'] ?>">
                                                     </div>
                                                 </form>
                                             </div>
