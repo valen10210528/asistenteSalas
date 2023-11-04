@@ -141,28 +141,19 @@
                     </span>
                 </div>
             </div>
-            <form id="crear_personal" name="crear_personal" class="form" action="?url_id=gestion_personal" method="POST" onsubmit="return validacion_crear_personal()" enctype="multipart/form-data">
-                <input type="hidden" name="formulario" id="formulario" value="crear_personal">
-                <div class="modal-body py-10 px-lg-17">
-                    <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
-                        <div class="d-flex flex-column mb-10 fv-row">
-                            <div class="row">
-                                <div class="col-12 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Nombre sede: </label>
-                                    <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Dirección sede:</label>
-                                    <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" />
-                                </div>
-                            </div>
-                            <div class="modal-footer flex-center">
-                                <input type="submit" name="enviar" id="enviar" value="Crear Usuario" class="btn btn-primary">
-                            </div>
-                        </div>
-                    </div>
+            <form action="?url_id=gestion_sedes" method="post" id="crear_sede" name="crear_sede">
+                <input type="hidden" id="formulario" name="formulario" value="crear_sede">
+                <div class="m-5 p-3">
+                    <label class="required fs-5 fw-bold mb-2"> Nombre sede</label>
+                    <input required type="text" class="form-control" id="nombre_sede" name="nombre_sede">
+                </div>
+                <div class="m-5 p-3">
+                    <label class="required fs-5 fw-bold mb-2"> Dirección sede</label>
+                    <input required type="text" class="form-control" id="direccion_sede" name="direccion_sede">
+                </div>
+                <div class="m-5 p-3">
+                    <input type="submit" value="Crear sede" class="btn btn-primary">
+                </div>
             </form>
         </div>
     </div>

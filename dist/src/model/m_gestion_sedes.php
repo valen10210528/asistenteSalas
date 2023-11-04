@@ -9,9 +9,6 @@ $fecha_hoy = date("Y-m-d");
 $fecha_hora_hoy = date("Y-m-d H:i:s"); //fecha_creacion
 $formulario = variable_exterior("formulario");
 
-$resultados = array();
-$resultados_final = array();
-
 $consulta = "";
 
 
