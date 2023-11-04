@@ -154,7 +154,7 @@
                 <input type="hidden" name="formulario" id="formulario" value="crear_personal">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
-                       
+
                         <div class="d-flex flex-column mb-10 fv-row">
                             <div class="row">
                                 <div class="col-6 mb-10">
@@ -188,9 +188,9 @@
                                     <label class="required fs-5 fw-bold mb-2">Email</label>
                                     <input required name="email" type="email" class="form-control form-control-solid" id="email" />
                                 </div>
-                            <div>
-                                
-                            </div class="row">
+                                <div>
+
+                                </div class="row">
                                 <div class="col-6 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Rol</label>
                                     <select required name="rol" id="rol" class="form-select form-select-lg mb-3">
