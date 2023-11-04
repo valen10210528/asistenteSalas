@@ -1,0 +1,6 @@
+#Ignoramos carpeta de seguridad
+seguridad
+
+#Ignoramos archivos de conexion 
+conexion.php
+verificar.php
