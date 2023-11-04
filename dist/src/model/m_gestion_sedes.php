@@ -48,7 +48,9 @@ if ($formulario == "crear_sede" && $formulario != "") {
     }
 }
 
-
+if ($formulario == "actualizar_sede" && $formulario != "") {
+    
+}
 
 
 
