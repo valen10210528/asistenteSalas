@@ -31,7 +31,7 @@ if ($formulario == "crear_usuario" && $formulario != "") {
     $apellidos = $_POST['apellidos'];
     $celular = $_POST['celular'];
     $email = $_POST['email'];
-    $rol = $_POST['rol'];
+    $rol = $_POST['id_rol'];
 
     // Crear usuario
     $sql = "INSERT INTO usuarios (usuario, nombres, apellidos, celular, email, rol, estado, fecha) VALUES ('$usuario', '$nombres', '$apellidos', '$celular', '$email', '1', '1', NOW())";
@@ -40,7 +40,7 @@ if ($formulario == "crear_usuario" && $formulario != "") {
         // EJECUTÓ BIEN
 ?>
         <script>
-            alert("La sede se insertó correctamente");
+            alert("El usuario se insertó correctamente");
         </script>
 
     <?php
@@ -48,7 +48,7 @@ if ($formulario == "crear_usuario" && $formulario != "") {
         // ERROR DOS
     ?>
         <script>
-            alert("Error! La sede no se insertó correctamente");
+            alert("Error! El usuario no se insertó correctamente");
         </script>
 
     <?php
@@ -57,23 +57,28 @@ if ($formulario == "crear_usuario" && $formulario != "") {
 
 // Actualizar usuario
 if ($formulario == "actualizar_usuario" && $formulario != "") {
-    $nombre_sede = $_POST['nombre_sede'];
-    $direccion_sede = $_POST['direccion_sede'];
+    $numero_identificacion = $_POST['numero_identificacion'];
+    $nombres = $_POST['nombres'];
+    $apellidos = $_POST['apellidos'];
+    $celular = $_POST['celular'];
+    $email = $_POST['email'];
+    $rol = $_POST['rol'];
     $estado = $_POST['estado'];
     $id = $_POST['id'];
 
     $sql = "UPDATE usuarios SET nombre = '$nombre_sede', direccion = '$direccion_sede', estado = '$estado' WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
+    
     if ($query->execute()) {
     ?>
         <script>
-            alert("Sede actualizada correctamente");
+            alert("Usuario actualizado correctamente");
         </script>
     <?php
     } else {
     ?>
         <script>
-            alert("Error! La sede no fue actualizada correctamente");
+            alert("Error! El usuario no fue actualizado correctamente");
         </script>
 
 <?php
@@ -82,6 +87,6 @@ if ($formulario == "actualizar_usuario" && $formulario != "") {
 $sql = "SELECT * FROM usuarios";
 $query = $dbm->prepare($sql);
 $query->execute();
-$sedes = array_asociativo($query);
+$usuarios = array_asociativo($query);
 
 ?>

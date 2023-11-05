@@ -21,9 +21,9 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-185px"></th>
                                 <th class="min-w-185px">Nombre</th>
-                                <th class="min-w-185px">Estado</th>
                                 <th class="min-w-185px">Dirección</th>
-                                <th class="min-w-185px">Editar</th>
+                                <th class="min-w-185px">Estado</th>
+                                <th class="min-w-185px">Opciones</th>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
@@ -34,6 +34,7 @@
                                     <tr>
                                         <td></td>
                                         <td><?php echo $fila['nombre'] ?></td>
+                                        <td><?php echo $fila['direccion'] ?></td>
                                         <td>
                                             <?php
                                             if ($fila['estado'] == 1) {
@@ -43,7 +44,6 @@
                                             }
                                             ?>
                                         </td>
-                                        <td><?php echo $fila['direccion'] ?></td>
                                         <td>
                                             <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key2<?php echo $fila['id'] ?>">
                                                 Editar

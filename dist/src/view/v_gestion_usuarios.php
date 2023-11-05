@@ -85,42 +85,39 @@
                         </thead>
                         <tbody class="fw-bold text-gray-600">
                             <?php
-                            if ($consulta != "") {
-                                while ($fila = $consulta->fetch()) {
+                            if (!empty($usuarios)) {
+                                foreach ($usuarios as $fila) {
                             ?>
-                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                        <td class="min-w-185px"></td>
-                                        <td class="min-w-185px"><a href="?url_id=usuario&id=<?= $fila['id']  ?>" target="_blank" class="btn btn-primary"><?= $fila['usuario']  ?></a></td>
-                                        <td class="min-w-185px"><?= $fila['contraseña']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['nombre']  ?></td>
-                                        <td class="min-w-185px"><?= $fila['correo']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['telefono']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['direccion']  ?></td>
-                                        <td class="min-w-125px">
+                                    <tr>
+                                        <td></td>
+                                        <td><?php echo $fila['usuario'] ?></td>
+                                        <td><?php echo $fila['tipo_identificacion'] . ' ' . $fila['identificacion'] ?></td>
+                                        <td><?php echo $fila['nombres'] ?></td>
+                                        <td><?php echo $fila['apellidos'] ?></td>
+                                        <td><?php echo $fila['celular'] ?></td>
+                                        <td><?php echo $fila['email'] ?></td>
+                                        <td>
                                             <?php
-                                            if ($_SESSION['administrador'] == 1) {
-                                                # code...
-                                                if ($fila['estado'] == "activo") {
-                                            ?>
-                                                    <a href="?url_id=gestion_personal&accion=inactivo&id_accion=<?php echo $fila['id'] ?>">
-                                                        <button type="button" class="btn btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
-                                                            ACTIVO
-                                                        </button>
-                                                    </a>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <a href="?url_id=gestion_personal&accion=activo&id_accion=<?php echo $fila['id'] ?>">
-                                                        <button type="button" class="btn btn-light-danger me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
-                                                            INACTIVO
-                                                        </button>
-                                                    </a>
-                                            <?php
-                                                }
+                                            if ($fila['id_rol'] == 1) {
+                                                echo "Administrador";
                                             } else {
-                                                echo $fila['estado'];
+                                                echo "Profesor";
                                             }
                                             ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($fila['estado'] == 1) {
+                                                echo "Activo";
+                                            } else {
+                                                echo "Inactivo";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key2<?php echo $fila['id'] ?>">
+                                                Editar
+                                            </a>
                                         </td>
                                     </tr>
                             <?php
