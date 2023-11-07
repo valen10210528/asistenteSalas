@@ -120,6 +120,108 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <div class="modal fade" id="kt_modal_create_api_key2<?php echo $fila['id'] ?>" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered mw-650px">
+                                            <div class="modal-content">
+                                                <div class="modal-header" id="kt_modal_create_api_key_header">
+                                                    <h2>Editar Usuario</h2>
+                                                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                                        <span class="svg-icon svg-icon-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <form id="actualizar_usuario" name="actualizar_usuario" class="form" action="?url_id=gestion_usuarios" method="POST">
+                                                    <!-- onsubmit="return validacion_crear_usuario()" enctype="multipart/form-data"> -->
+                                                    <input type="hidden" name="formulario" id="formulario" value="actualizar_usuario">
+                                                    <div class="modal-body py-10 px-lg-17">
+                                                        <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
+
+                                                            <div class="d-flex flex-column mb-10 fv-row">
+                                                                <div class="row">
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Número Identificación:</label>
+                                                                        <input required name="numero_identificacion" type="number" class="form-control form-control-solid" id="numero_identificacion" value="<?php echo $fila['identificacion'] ?>">
+                                                                    </div>
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Tipo identificación</label>
+                                                                        <select required name="tipo_identificacion" id="tipo_identificacion" class="form-select form-select-lg mb-3" value="<?php echo $fila['tipo_identificacion'] ?>">
+                                                                            <option value="CC" selected>CC</option>
+                                                                            <option value="TI">TI</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Nombres</label>
+                                                                        <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" value="<?php echo $fila['nombres'] ?>">
+                                                                    </div>
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Apellidos</label>
+                                                                        <input required name="apellidos" type="text" class="form-control form-control-solid" id="apellidos" value="<?php echo $fila['apellidos'] ?>">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Celular</label>
+                                                                        <input required name="celular" type="text" class="form-control form-control-solid" id="celular" value="<?php echo $fila['celular'] ?>">
+                                                                    </div>
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Email</label>
+                                                                        <input required name="email" type="email" class="form-control form-control-solid" id="email" value="<?php echo $fila['email'] ?>">
+                                                                    </div>
+                                                                    <div>
+
+                                                                    </div class="row">
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Rol</label>
+                                                                        <select required name="rol" id="rol" class="form-select form-select-lg mb-3">
+
+                                                                            <?php
+                                                                            if ($fila['id_rol'] == "1") {
+                                                                            ?>
+                                                                                <option value="1" selected>Administrador</option>
+                                                                            <?php
+                                                                            } else {
+                                                                            ?>
+                                                                                <option value="1">Administrador</option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                            <?php
+                                                                            if ($fila['id_rol'] == "2") {
+                                                                            ?>
+                                                                                <option value="2" selected>Profesor</option>
+                                                                            <?php
+                                                                            } else {
+                                                                            ?>
+                                                                                <option value="2">Profesor</option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-6 mb-10">
+                                                                        <label class="required fs-5 fw-bold mb-2">Contrasena</label>
+                                                                        <input required name="password" type="password" class="form-control form-control-solid" id="password" />
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="modal-footer flex-center">
+                                                                    <input type="submit" value="Actualizar Usuario" class="btn btn-primary">
+                                                                    <input type="hidden" id="id" name="id" value="<?php echo $fila['id'] ?>">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                             <?php
                                 }
                             }
@@ -147,7 +249,7 @@
                     </span>
                 </div>
             </div>
-            <form id="crear_usuario" name="crear_usuario" class="form" action="?url_id=gestion_personal" method="POST" onsubmit="return validacion_crear_personal()" enctype="multipart/form-data">
+            <form id="crear_usuario" name="crear_usuario" class="form" action="?url_id=gestion_usuarios" method="POST" onsubmit="return validacion_crear_usuario()" enctype="multipart/form-data">
                 <input type="hidden" name="formulario" id="formulario" value="crear_usuario">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
@@ -160,9 +262,9 @@
                                 </div>
                                 <div class="col-6 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Tipo identificación</label>
-                                    <select required name="tipo_id" id="tipo_id" class="form-select form-select-lg mb-3">
-                                        <option value="0" selected>CC</option>
-                                        <option value="1">TI</option>
+                                    <select required name="tipo_identificacion" id="tipo_identificacion" class="form-select form-select-lg mb-3">
+                                        <option value="CC" selected>CC</option>
+                                        <option value="TI">TI</option>
                                     </select>
                                 </div>
                             </div>
@@ -195,6 +297,10 @@
                                         <option value="1">Administrador</option>
                                         <option value="2">Profesor</option>
                                     </select>
+                                </div>
+                                <div class="col-6 mb-10">
+                                    <label class="required fs-5 fw-bold mb-2">Contrasena</label>
+                                    <input required name="password" type="password" class="form-control form-control-solid" id="password" />
                                 </div>
                             </div>
 

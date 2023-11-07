@@ -26,15 +26,18 @@ if (isset($_POST['formulario'])) {
 
 if ($formulario == "crear_usuario" && $formulario != "") {
     // Importación de valores para insert
+    $tipo_identificacion = $_POST['tipo_identificacion'];
     $numero_identificacion = $_POST['numero_identificacion'];
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
     $celular = $_POST['celular'];
     $email = $_POST['email'];
-    $rol = $_POST['id_rol'];
-
+    $rol = $_POST['rol'];
+    $usuario = strstr($email, "@", true);
+    $contrasena = md5($_POST['password']);
+    
     // Crear usuario
-    $sql = "INSERT INTO usuarios (usuario, nombres, apellidos, celular, email, rol, estado, fecha) VALUES ('$usuario', '$nombres', '$apellidos', '$celular', '$email', '1', '1', NOW())";
+    $sql = "INSERT INTO usuarios (usuario, contrasena, tipo_identificacion, identificacion, nombres, apellidos, celular, email, id_rol, estado, fecha) VALUES ('$usuario', '$contrasena','$tipo_identificacion', '$numero_identificacion', '$nombres', '$apellidos', '$celular', '$email', '$rol', '1', NOW())";
     $query = $dbm->prepare($sql);
     if ($query->execute()) {
         // EJECUTÓ BIEN
@@ -57,6 +60,7 @@ if ($formulario == "crear_usuario" && $formulario != "") {
 
 // Actualizar usuario
 if ($formulario == "actualizar_usuario" && $formulario != "") {
+    $tipo_identificacion = $_POST['tipo_identificacion'];
     $numero_identificacion = $_POST['numero_identificacion'];
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
@@ -64,9 +68,11 @@ if ($formulario == "actualizar_usuario" && $formulario != "") {
     $email = $_POST['email'];
     $rol = $_POST['rol'];
     $estado = $_POST['estado'];
+    $usuario = strstr($email, "@", true);
+    $contrasena = md5($_POST['password']);
     $id = $_POST['id'];
 
-    $sql = "UPDATE usuarios SET nombre = '$nombre_sede', direccion = '$direccion_sede', estado = '$estado' WHERE id ='$id' ";
+    $sql = "UPDATE usuarios SET tipo_identificacion = '$tipo_identificacion', identificacion = '$numero_identificacion', nombres = '$nombres', apellidos = '$apellidos', celular = '$celular', email = '$email', nombres = '$nombres', id_rol = '$rol', estado = '$estado', nombres = '$nombres', usuario = '$usuario', contrasena = '$contrasena' WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
     
     if ($query->execute()) {
@@ -84,6 +90,8 @@ if ($formulario == "actualizar_usuario" && $formulario != "") {
 <?php
     }
 }
+
+// Consultar usuarios tabla
 $sql = "SELECT * FROM usuarios";
 $query = $dbm->prepare($sql);
 $query->execute();
