@@ -60,7 +60,7 @@ ini_set('display_errors', '1');
 		if ($username != "" && $password  != "" ) {
 			$password = md5($password);
 			$dbm = conectar_mysql();
-			$sql = "SELECT * FROM usuarios WHERE usuario = '" . $username . "' AND contraseña = '" . $password . "' AND estado = '1'";
+			$sql = "SELECT * FROM usuarios WHERE usuario = '" . $username . "' AND contrasena = '" . $password . "' AND estado = '1'";
 			$query = $dbm->prepare($sql);
 			$query->execute();
 			$datos = $query->fetch();
