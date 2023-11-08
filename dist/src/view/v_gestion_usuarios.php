@@ -80,7 +80,8 @@
                                 <th class="min-w-125px">Celular</th>
                                 <th class="min-w-125px">Email</th>
                                 <th class="min-w-125px">Rol</th>
-                                <th class="min-w-125px">Estado</th>
+                                <th class="min-w-50px">Estado</th>
+                                <td >Opciones</td>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
@@ -96,6 +97,7 @@
                                         <td><?php echo $fila['apellidos'] ?></td>
                                         <td><?php echo $fila['celular'] ?></td>
                                         <td><?php echo $fila['email'] ?></td>
+                                       
                                         <td>
                                             <?php
                                             if ($fila['id_rol'] == 1) {
@@ -117,6 +119,11 @@
                                         <td>
                                             <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key2<?php echo $fila['id'] ?>">
                                                 Editar
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key2<?php echo $fila['id'] ?>">
+                                                Eliminar
                                             </a>
                                         </td>
                                     </tr>
@@ -208,31 +215,60 @@
                                                                         <label class="required fs-5 fw-bold mb-2">Contrasena</label>
                                                                         <input required name="password" type="password" class="form-control form-control-solid" id="password" />
                                                                     </div>
-                                                                </div>
 
+                                                                </div class="row">
+                                                                <label class="required fs-5 fw-bold mb-2"> Estado Usuario</label>
+                                                                <select name="estado" id="estado" class="form-control">
+                                                                    <?php
+                                                                    if ($fila['estado'] == "1") {
+                                                                    ?>
+                                                                        <option value="1" selected>Activo</option>
+                                                                    <?php
+                                                                    } else {
+                                                                    ?>
+                                                                        <option value="1">Activo</option>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
 
-                                                                <div class="modal-footer flex-center">
-                                                                    <input type="submit" value="Actualizar Usuario" class="btn btn-primary">
-                                                                    <input type="hidden" id="id" name="id" value="<?php echo $fila['id'] ?>">
-                                                                </div>
+                                                                    <?php
+                                                                    if ($fila['estado'] == "0") {
+                                                                    ?>
+                                                                        <option value="0" selected>Inactivo</option>
+                                                                    <?php
+                                                                    } else {
+                                                                    ?>
+                                                                        <option value="0">Inactivo</option>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
+                                                                </select>
                                                             </div>
                                                         </div>
+
+
+                                                        <div class="modal-footer flex-center">
+                                                            <input type="submit" value="Actualizar Usuario" class="btn btn-primary">
+                                                            <input type="hidden" id="id" name="id" value="<?php echo $fila['id'] ?>">
+                                                        </div>
                                                     </div>
-                                                </form>
                                             </div>
                                         </div>
+                                        </form>
                                     </div>
-                            <?php
+                </div>
+            </div>
+    <?php
                                 }
                             }
 
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    ?>
+    </tbody>
+    </table>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 <div class="modal fade" id="kt_modal_create_api_key" tabindex="-1" aria-hidden="true">
