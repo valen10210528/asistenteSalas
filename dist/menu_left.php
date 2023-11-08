@@ -27,20 +27,18 @@
 				</div>
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
-				<a class="menu-link" href="?url_id=gestion_usuarios">
-					<span title="Usuarios" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-						<span class="menu-icon">
-							<!--begin::Svg Icon | path: icons/duotune/abstract/abs037.svg-->
-							<i class="bi bi-people-fill"></i>
-						</span>
-						<!--end::Svg Icon-->
-				</a>
+				<span class="menu-link" title="Usuarios" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+					<span class="menu-icon">
+						<!--begin::Svg Icon | path: icons/duotune/abstract/abs037.svg-->
+						<i class="bi bi-people-fill"></i>
+					</span>
+					<!--end::Svg Icon-->
 				</span>
 				</span>
 				<div class="text-align-center" style="text-align: center;">
 					<p style="color:#182A45" ;><small><small>Usuarios</small></small></p>
 				</div>
-				<!-- <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4 scroll-y mh-325px">
+				<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4 scroll-y mh-325px">
 					<div class="menu-item">
 						<div class="menu-content">
 							<span class="menu-section fs-5 fw-bolder ps-1 py-1">Usuarios</span>
@@ -54,7 +52,7 @@
 							<span class="menu-title">Gestión de usuarios</span>
 						</a>
 					</div>
-				</div> -->
+				</div>
 
 			</div>
 			<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
