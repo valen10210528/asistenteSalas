@@ -18,7 +18,7 @@ if (isset($_POST['formulario'])) {
 }
 
 
-
+//Crear sede 
 if ($formulario == "crear_sede" && $formulario != "") {
 
     $nombre_sede = $_POST['nombre_sede'];
@@ -44,7 +44,7 @@ if ($formulario == "crear_sede" && $formulario != "") {
     <?php
     }
 }
-
+//Actualizar Sede 
 if ($formulario == "actualizar_sede" && $formulario != "") {
     $nombre_sede = $_POST['nombre_sede'];
     $direccion_sede = $_POST['direccion_sede'];

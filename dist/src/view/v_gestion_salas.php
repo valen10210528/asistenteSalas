@@ -141,15 +141,15 @@
                     </span>
                 </div>
             </div>
-            <form id="crear_personal" name="crear_personal" class="form" action="?url_id=gestion_personal" method="POST" onsubmit="return validacion_crear_personal()" enctype="multipart/form-data">
-                <input type="hidden" name="formulario" id="formulario" value="crear_personal">
+            <form id="crear_sala" name="crear_sala" class="form" action="?url_id=gestion_sala" method="POST" onsubmit="return validacion_crear_sala()" enctype="multipart/form-data">
+                <input type="hidden" name="formulario" id="formulario" value="crear_sala">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
                         <div class="d-flex flex-column mb-10 fv-row">
                             <div class="row">
                                 <div class="col-12 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Sede: </label>
-                                    <select required class="form-select form-select-solid fw-bolder" data-placeholder="Select option" id="kt_modal_add_event_sede_paciente" name="calendar_event_name">
+                                    <select required class="form-select form-select-solid fw-bolder" data-placeholder="Select option" id="id_sede" name="id_sede">
                                         <option value="" selected>Seleccionar Sede </option>
                                         <?php
                                         foreach ($sedes as $key) {
