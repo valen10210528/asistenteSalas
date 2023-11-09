@@ -121,11 +121,6 @@
                                                 Editar
                                             </a>
                                         </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt_modal_create_api_key2<?php echo $fila['id'] ?>">
-                                                Eliminar
-                                            </a>
-                                        </td>
                                     </tr>
                                     <div class="modal fade" id="kt_modal_create_api_key2<?php echo $fila['id'] ?>" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered mw-650px">
