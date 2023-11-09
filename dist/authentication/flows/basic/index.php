@@ -63,7 +63,8 @@ header('Strict-Transport-Security max-age=31536000');
 				<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 					<div class="card " data-step="1" data-intro="Bienvenido! a ASIS SALAS">
 						<div class="text-center m-1">
-							<img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="200px" />
+							<img alt="Logo" src="assets/media/logos/LogoAsisSalas.png" height="auto" width="200px" />
+							<!-- <img alt="Logo" src="assets/media/logos/logo.png" height="auto" width="200px" /> -->
 						</div>
 						<div class="card-body">
 							<div class="tab-content" id="myTabContent" data-step="7" data-intro="Ingrese las credenciales de Acceso">

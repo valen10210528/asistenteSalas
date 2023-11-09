@@ -32,8 +32,8 @@
                             <!--begin::Content-->
 
 
-                            <form class="form" action="?url_id=gestion_personal" method="POST" id="consultar_personal" name="consultar_personal" enctype="multipart/form-data">
-                                <input type="hidden" name="formulario" id="formulario" value="consultar_personal">
+                            <form class="form" action="?url_id=gestion_usuarios" method="POST" id="filtrar_usuario" name="filtrar_usuario" enctype="multipart/form-data">
+                                <input type="hidden" name="formulario" id="formulario" value="filtrar_usuario">
                                 <div class="scroll-y mh-300px mh-lg-325px">
                                     <div class="px-7 py-5">
                                         <div class="mb-10">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="mb-10">
                                             <label class="form-label fs-5 fw-bold mb-3">Nombre:</label>
-                                            <input id="nombre" name="nombre" type="text" class="form-control form-control-solid" />
+                                            <input id="nombres" name="nombres" type="text" class="form-control form-control-solid" />
                                         </div>
                                         <div class="d-flex justify-content-end">
                                             <input type="submit" name="enviar" class="btn btn-primary" value="Filtrar">
