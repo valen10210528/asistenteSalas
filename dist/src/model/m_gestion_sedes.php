@@ -17,7 +17,6 @@ if (isset($_POST['formulario'])) {
     $formulario = "";
 }
 
-
 //Crear sede 
 if ($formulario == "crear_sede" && $formulario != "") {
 

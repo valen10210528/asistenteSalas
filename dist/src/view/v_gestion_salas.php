@@ -65,51 +65,36 @@
                         <thead>
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-185px"></th>
-                                <th class="min-w-185px">Usuario</th>
-                                <th class="min-w-185px">Contraseña</th>
-                                <th class="min-w-125px">Nombre Completo</th>
-                                <th class="min-w-185px">Correo</th>
-                                <th class="min-w-125px">Telefono</th>
-                                <th class="min-w-125px">Dirección</th>
+                                <th class="min-w-185px">Nombre Sede</th>
+                                <th class="min-w-185px">Sala</th>
+                                <th class="min-w-125px">Bloque</th>
+                                <th class="min-w-185px">Capacidad de Estudiantes</th>
+                                <th class="min-w-125px">Aire Acondicionado</th>
+                                <th class="min-w-125px">Video Beam</th>
+                                <th class="min-w-125px">Observaciones</th>
                                 <th class="min-w-125px">Estado</th>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
                             <?php
-                            if ($consulta != "") {
-                                while ($fila = $consulta->fetch()) {
+                            if (!empty($salas2)) {
+                                foreach ($salas2 as $fila) {
                             ?>
                                     <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                         <td class="min-w-185px"></td>
-                                        <td class="min-w-185px"><a href="?url_id=usuario&id=<?= $fila['id']  ?>" target="_blank" class="btn btn-primary"><?= $fila['usuario']  ?></a></td>
-                                        <td class="min-w-185px"><?= $fila['contraseña']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['nombre']  ?></td>
-                                        <td class="min-w-185px"><?= $fila['correo']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['telefono']  ?></td>
-                                        <td class="min-w-125px"><?= $fila['direccion']  ?></td>
+                                        <td class="min-w-185px"><?php echo $fila['nombre_sede']  ?></td>
+                                        <td class="min-w-185px"><?php echo $fila['nombre']  ?></td>
+                                        <td class="min-w-125px"><?php echo $fila['bloque']  ?></td>
+                                        <td class="min-w-185px"><?php echo $fila['capacidad_estudiantes']  ?></td>
+                                        <td class="min-w-125px"><?php echo $fila['aire_acondicionado']  ?></td>
+                                        <td class="min-w-125px"><?php echo $fila['video_beam']  ?></td>
+                                        <td class="min-w-125px"><?php echo $fila['observacion']  ?></td>
                                         <td class="min-w-125px">
-                                            <?php
-                                            if ($_SESSION['administrador'] == 1) {
-                                                # code...
-                                                if ($fila['estado'] == "activo") {
-                                            ?>
-                                                    <a href="?url_id=gestion_personal&accion=inactivo&id_accion=<?php echo $fila['id'] ?>">
-                                                        <button type="button" class="btn btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
-                                                            ACTIVO
-                                                        </button>
-                                                    </a>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <a href="?url_id=gestion_personal&accion=activo&id_accion=<?php echo $fila['id'] ?>">
-                                                        <button type="button" class="btn btn-light-danger me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
-                                                            INACTIVO
-                                                        </button>
-                                                    </a>
-                                            <?php
-                                                }
+                                        <?php
+                                            if ($fila['estado'] == 1) {
+                                                echo "Activo";
                                             } else {
-                                                echo $fila['estado'];
+                                                echo "Inactivo";
                                             }
                                             ?>
                                         </td>
@@ -141,7 +126,7 @@
                     </span>
                 </div>
             </div>
-            <form id="crear_sala" name="crear_sala" class="form" action="?url_id=gestion_sala" method="POST" onsubmit="return validacion_crear_sala()" enctype="multipart/form-data">
+            <form id="crear_sala" name="crear_sala" class="form" action="?url_id=gestion_salas" method="post">
                 <input type="hidden" name="formulario" id="formulario" value="crear_sala">
                 <div class="modal-body py-10 px-lg-17">
                     <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_create_api_key_header" data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
@@ -165,31 +150,35 @@
                             <div class="row">
                                 <div class="col-12 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Nombre de Sala:</label>
-                                    <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" />
+                                    <input required name="sala" type="text" class="form-control form-control-solid" id="sala" />
                                 </div>
+                            </div>
+                            <div class="col-12 mb-10">
+                                <label class="required fs-5 fw-bold mb-2">Observaciones:</label>
+                                <input required name="observacion" type="text" class="form-control form-control-solid" id="observacion" />
                             </div>
                             <div class="row text-center">
                                 <div class="col-3 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Bloque:</label>
-                                    <input required name="nombres" type="text" class="form-control form-control-solid" id="nombres" />
+                                    <input required name="bloque" type="text" class="form-control form-control-solid" id="bloque" />
                                 </div>
                                 <div class="col-3 mb-10">
                                     <label class="required fs-5 fw-bold mb-2"># Est.:</label>
-                                    <input required name="nombres" type="number" class="form-control form-control-solid" id="nombres" />
+                                    <input required name="num_estudiantes" type="number" class="form-control form-control-solid" id="num_estudiantes" />
                                 </div>
                                 <div class="col-3 mb-10">
                                     <label class="required fs-5 fw-bold mb-2">Aire:</label> <br>
-                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault1" id="flexRadioDefault1" checked>
+                                    <input class="form-check-input" type="checkbox" name="aire" id="aire" checked>
                                 </div>
-                                <div class="col-3 mb-10">
-                                    <label class="required fs-5 fw-bold mb-2">Video Beam:</label>
-                                    <input class="form-check-input" type="checkbox" name="flexRadioDefault2" id="flexRadioDefault2" checked>
+                                <div class="col-2 mb-10">
+                                    <label class="required fs-5 fw-bold mb-2">VideoBeam:</label>
+                                    <input class="form-check-input" type="checkbox" name="video" id="video" checked>
                                 </div>
 
                             </div>
 
                             <div class="modal-footer flex-center">
-                                <input type="submit" name="enviar" id="enviar" value="Crear Usuario" class="btn btn-primary">
+                                <input type="submit" value="Crear Sala" class="btn btn-primary">
                             </div>
                         </div>
                     </div>
