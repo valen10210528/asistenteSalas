@@ -14,7 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir los datos enviados por la solicitud POSenviar_emailT
     $data = json_decode(file_get_contents('php://input'), true);
 
-    if ($data['accion'] == "eliminar_cita") {
+    if ($data['accion'] == "consulta_paciente") {
+
+        $id_sede = $data['sede'];
+        $fecha_inicio = $data['fecha_inicio'];
+        $fecha_fin = $data['fecha_inicio'];
+        $hora_inicio = $data['hora_inicio'];
+        $hora_fin = $data['hora_fin'];
+        $sql = "SELECT COUNT(*) AS cont FROM reservas WHERE id_sede = '$id_sede' AND ";
+
         $response = array('mensaje' => 'error');
     }
 
