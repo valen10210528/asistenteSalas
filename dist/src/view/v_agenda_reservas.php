@@ -213,10 +213,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="row row-cols-lg-2 g-10">
-									<div class="col">
-
-									</div>
+								<div id="crear_reserva" style="display: none;">
+									<h2>hola</h2>
 								</div>
 							</div>
 							<div class="modal-footer flex-center">

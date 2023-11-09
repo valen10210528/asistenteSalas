@@ -14,16 +14,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir los datos enviados por la solicitud POSenviar_emailT
     $data = json_decode(file_get_contents('php://input'), true);
 
-    if ($data['accion'] == "consulta_paciente") {
+    if ($data['accion'] == "consulta_sala") {
 
         $id_sede = $data['sede'];
         $fecha_inicio = $data['fecha_inicio'];
         $fecha_fin = $data['fecha_inicio'];
         $hora_inicio = $data['hora_inicio'];
         $hora_fin = $data['hora_fin'];
-        $sql = "SELECT COUNT(*) AS cont FROM reservas WHERE id_sede = '$id_sede' AND ";
+        $sql = "SELECT 
+                    COUNT(*) AS cont
+                FROM 
+                    salas
+                LEFT JOIN reservas
+                    ON salas.id = reservas.id_sala
+                    AND reservas.fecha_reserva = '$fecha_inicio'
+                    AND reservas.hora_reserva_inicio BETWEEN '$hora_inicio' AND '$hora_fin'
+                    AND reservas.hora_reserva_fin BETWEEN '$hora_inicio' AND '$hora_fin'
+                WHERE salas.id_sede = '$id_sede' AND reservas.id_sala IS NULL;
+                ";
+        $query = $dbm_mysql->prepare($sql);
+        $query->execute();
+        $cont_salas = array_($query);
+        if ($cont_salas[0]['cont'] != 0) {
+            // HAY SALAS DISPONIBLES
+            $sql = "SELECT 
+                        salas.*
+                    FROM 
+                        salas
+                    LEFT JOIN reservas
+                        ON salas.id = reservas.id_sala
+                        AND reservas.fecha_reserva = '$fecha_inicio'
+                        AND reservas.hora_reserva_inicio BETWEEN '$hora_inicio' AND '$hora_fin'
+                        AND reservas.hora_reserva_fin BETWEEN '$hora_inicio' AND '$hora_fin'
+                    WHERE salas.id_sede = '$id_sede' AND reservas.id_sala IS NULL;
+                    ";
+            $query = $dbm_mysql->prepare($sql);
+            $query->execute();
+            $salas_disponibles = array_($query);
+            $mensaje = "ok";
+        } else {
+            $mensaje = "no";
+            $salas_disponibles = [];
+        }
 
-        $response = array('mensaje' => 'error');
+        $response = array('mensaje' => $mensaje, 'salas_disponibles' => $salas_disponibles);
     }
 
     if ($data['accion'] == "generar_cita") {
