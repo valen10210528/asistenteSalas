@@ -106,11 +106,7 @@ header('Strict-Transport-Security max-age=31536000');
 		})()
 	</script>
 	<script type="text/javascript" src="../../dist/src/plugins/intro.js-master/intro.js"></script>
-	<div id="div-totop" class="cmn-divfloat div-totop">
-		<a href="javascript:void(0);" onclick="javascript:startTour();" class="cmn-btncircle warning">
-			<i class="far fa-question-circle fa-2x"></i>
-		</a>
-	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.0/apexcharts.min.js" integrity="sha512-RLWwcf0Pb2NghIfkaQms354xRV36EYjXLWKSN8QHiHqNq3KGj0DjMc9D1zzO7UsREkGU/xCLAJi/hVcKSuZ5Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->

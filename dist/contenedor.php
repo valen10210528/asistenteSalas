@@ -78,11 +78,6 @@
 			})()
 		</script>
 		<script type="text/javascript" src="../../dist/src/plugins/intro.js-master/intro.js"></script>
-		<div id="div-totop" class="cmn-divfloat div-totop">
-		    <a href="javascript:void(0);" onclick="javascript:startTour();" class="cmn-btncircle warning">
-		        <i class="far fa-question-circle fa-2x"></i>
-		    </a>
-		</div>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
