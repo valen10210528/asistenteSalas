@@ -160,6 +160,16 @@
 											<!--end::Input-->
 										</div>
 									</div>
+									<div class="col" style="display: none;">
+										<div class="fv-row mb-9">
+											<!--begin::Label-->
+											<label class="fs-6 fw-bold mb-2 required">Event End Date</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<input class="form-control form-control-solid" name="calendar_event_end_date" placeholder="Pick a end date" id="kt_calendar_datepicker_end_date" />
+											<!--end::Input-->
+										</div>
+									</div>
 								</div>
 								<div class="fv-row mb-9" style="display: none;">
 									<input type="text" class="form-control form-control-solid" placeholder="" name="calendar_event_location" />
@@ -170,7 +180,7 @@
 									</label>
 								</div>
 								<div class="row row-cols-lg-3 g-10">
-									
+
 									<div class="col">
 										<div class="fv-row mb-9">
 											<!--begin::Label-->
@@ -191,7 +201,7 @@
 											<!--end::Input-->
 										</div>
 									</div>
-									<div class="col" style="display: none;">
+									<div class="col">
 										<div class="fv-row mb-9">
 											<label class="form-label fs-5 fw-bold my-3 "></label>
 											<br>
@@ -203,16 +213,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="row row-cols-lg-2 g-10" style="display: none;">
+								<div class="row row-cols-lg-2 g-10">
 									<div class="col">
-										<div class="fv-row mb-9">
-											<!--begin::Label-->
-											<label class="fs-6 fw-bold mb-2 required">Event End Date</label>
-											<!--end::Label-->
-											<!--begin::Input-->
-											<input class="form-control form-control-solid" name="calendar_event_end_date" placeholder="Pick a end date" id="kt_calendar_datepicker_end_date" />
-											<!--end::Input-->
-										</div>
+
 									</div>
 								</div>
 							</div>

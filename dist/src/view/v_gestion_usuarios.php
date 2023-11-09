@@ -81,7 +81,7 @@
                                 <th class="min-w-125px">Email</th>
                                 <th class="min-w-125px">Rol</th>
                                 <th class="min-w-50px">Estado</th>
-                                <td >Opciones</td>
+                                <td>Opciones</td>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
@@ -97,7 +97,7 @@
                                         <td><?php echo $fila['apellidos'] ?></td>
                                         <td><?php echo $fila['celular'] ?></td>
                                         <td><?php echo $fila['email'] ?></td>
-                                       
+
                                         <td>
                                             <?php
                                             if ($fila['id_rol'] == 1) {
@@ -261,7 +261,6 @@
     <?php
                                 }
                             }
-
     ?>
     </tbody>
     </table>

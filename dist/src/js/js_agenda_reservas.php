@@ -162,7 +162,6 @@
                     f = p.querySelector('[data-kt-calendar="title"]');
                 v = new bootstrap.Modal(t);
 
-
                 const B = document.getElementById("kt_modal_view_event");
                 var F, O, I, R, G, K;
                 prueba = _.addEventListener("click", (function(t) {
@@ -171,17 +170,17 @@
                     // console.log(isClickEventAttached);
                     t.preventDefault();
                     y && y.validate().then((function(t) {
-                        if ("Valid" == t) {
-                            const currentA = n.value; // Cambiar a n.value en lugar de a.value
-                            const currentN = a.value;
+                        const currentA = n.value; // Cambiar a n.value en lugar de a.value
+                        if (currentA && r.value && l.value && s.value && m.value) {
+
+
                             fetch('src/ajax/a_agenda_reservas.php', {
                                     method: 'POST', // O 'GET' u otro método según tu necesidad
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify({
-                                        accion: 'consulta_paciente',
-                                        documento: currentN,
+                                        accion: 'consulta_sala',
                                         sede: currentA,
                                         fecha_inicio: r.value,
                                         fecha_fin: l.value,
@@ -191,121 +190,6 @@
                                 })
                                 .then(response => response.json())
                                 .then(data => {
-
-                                    const ordenesWeb = data.ordenes_paciente;
-
-                                    // LLENAR LA TABLA DE LAS ORDENES VIEJAS DEL PACIENTE
-                                    if (table_ordenes_paciente != "") {
-                                        table_ordenes_paciente.destroy();
-                                    }
-
-                                    document.getElementById('ordenes_paciente').innerHTML = "";
-
-
-                                    $.each(ordenesWeb, function(id, value) {
-                                        // Obtener la fecha actual
-                                        if (value.red_nacional == "si") {
-                                            value.sede = "CALI";
-                                        } else if (value.sede == "CALI") {
-                                            value.sede = "CALI NORTE"
-                                        }
-
-                                        if (value.sede == "BUENAVENTU") {
-                                            value.sede = "BUENAVENTURA"
-                                        }
-
-                                        var boton = '<td> <a href="?url_id=orden_sede_detalle&sede=' + value.sede + '&id=' + value.id_orden + '"class="btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary" target="_blank">' + value.ordennumero + '</a> </td>';
-                                        var botonlink = '<td> <a href="?url_id=orden_sede_detalle&sede=' + value.sede + '&id=' + value.id_orden + '"class="btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary" target="_blank">' + value.ordennumero + '</a> </td>';
-
-                                        var fechaActual = new Date();
-                                        // Convertir la fecha de citación a objeto Date
-                                        if (value.fechacitacion != null && value.fechacitacion != undefined) {
-                                            var fechaCitacion = new Date(value.fechacitacion);
-                                            // Calcular la diferencia en milisegundos entre las fechas
-                                            var diferenciaEnMilisegundos = Math.abs(fechaCitacion - fechaActual);
-
-                                            // Calcular la cantidad de días de diferencia
-                                            var diasDiferencia = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-                                        }
-                                        var filaHTML = '<tr>';
-                                        filaHTML += '<td class="ocultar-columna">' + diasDiferencia + '</td>';
-                                        if (diasDiferencia >= 7 && diasDiferencia != undefined) {
-                                            // Si la diferencia es igual o mayor a 7| días, añadir la clase para resaltar la fila
-                                            filaHTML += botonlink;
-
-                                        } else {
-
-                                            filaHTML += boton;
-                                        }
-                                        // filaHTML += '<td>' + value.sede + '</td>';
-                                        filaHTML += '<td>' + value.fecha + '</td>';
-                                        filaHTML += '<td>' + ((value.estadoOrden === 'pre_facturada' && value.idagenda != null ? "Cita" : "Prefactura")) + '</td>';
-                                        filaHTML += '<td>' + (value.fechacitacion === null ? "No Aplica" : value.fechacitacion) + '</td>';
-                                        filaHTML += '<td>' + value.estadoOrden + '</td>';
-                                        filaHTML += '<td class="max-w-185">' + value.empresa + ' / ' + value.mision + '</td>';
-                                        filaHTML += '<td>' + value.tipo + ' / ' + value.cargo + '</td>';
-                                        filaHTML += '</tr>';
-
-                                        $("#ordenes_paciente").append(filaHTML);
-                                    });
-
-                                    // Inicializar DataTable si aún no existe
-                                    table_ordenes_paciente = new DataTable('#table_ordenes_paciente', {
-                                        // destroy: true,
-
-                                        responsive: true,
-                                        columnDefs: [{
-                                            targets: [0], // Índice de la columna de días (contando desde 0)
-                                            visible: false, // Ocultar la columna de días
-                                        }],
-                                        "createdRow": function(row, data, dataIndex) {
-                                            if (data[0] >= 7) {
-                                                $(row).addClass('red');
-                                            }
-                                        },
-                                        "destroy": true // Destruir instancia previa de DataTable si existe
-                                    });
-
-                                    /* FIN LLENAR LA TABLA DE LAS ORDENES VIEJAS DEL PACIENTE */
-
-                                    const startInput = document.getElementById('kt_calendar_datepicker_start_time');
-                                    const endInput = document.getElementById('kt_calendar_datepicker_end_time');
-
-                                    // Agrega un oyente de eventos para el evento 'input' en el primer input
-                                    startInput.addEventListener('input', function() {
-                                        document.getElementById('crear_orden').style.display = 'none';
-
-                                        // Obtiene el valor actual del primer campo de entrada
-                                        const startValue = startInput.value;
-
-                                        // Verifica si el valor es una hora válida en el formato HH:MM
-                                        const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
-                                        if (timeRegex.test(startValue)) {
-                                            // Divide la hora y los minutos en partes separadas
-                                            const [hours, minutes] = startValue.split(':');
-
-                                            // Convierte las horas y minutos a números enteros
-                                            const hoursInt = parseInt(hours, 10);
-                                            const minutesInt = parseInt(minutes, 10);
-
-                                            // Suma 20 minutos a los minutos actuales
-                                            const newMinutes = (minutesInt + 20) % 60;
-
-                                            // Calcula las horas adicionales si los minutos superan 60
-                                            const additionalHours = Math.floor((minutesInt + 20) / 60);
-
-                                            // Suma las horas actuales y las adicionales
-                                            const newHours = (hoursInt + additionalHours) % 24;
-
-                                            // Formatea la nueva hora y minutos en el formato HH:MM
-                                            const newTime = `${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}`;
-
-                                            // Actualiza el valor del segundo campo de entrada con la nueva hora
-                                            endInput.value = newTime;
-                                        }
-                                    });
-
-
                                     if (data.disponibilidad_cita_sede != "si") {
                                         Swal.fire({
                                             text: "No hay disponibilidad para la hora de inicio seleccionada.",
@@ -314,246 +198,15 @@
                                     } else {
                                         document.getElementById('crear_orden').style.display = 'block';
 
-                                        // MUNICIPIOS
-                                        var municipios = data.municipio;
-                                        var select = document.getElementById("ciudadorigen");
-                                        for (var i = 0; i < municipios.length; i++) {
-                                            var option = document.createElement("option"); // Crea un elemento option
-                                            if (municipios[i].municipio !== null) {
-                                                option.value = municipios[i].municipio; // Establece el valor de la opción
-                                                option.text = municipios[i].municipio; // Establece el texto visible de la opción
-                                                select.appendChild(option); // Agrega la opción al select
-                                            }
-                                        }
-                                        // EMPRESA
-                                        var empresas_2 = data.empresas;
-                                        var select_2 = document.getElementById("empresa_buscar");
-                                        for (var i = 0; i < empresas_2.length; i++) {
-                                            var option = document.createElement("option"); // Crea un elemento option
-                                            option.value = empresas_2[i].idempresa; // Establece el valor de la opción
-                                            option.text = empresas_2[i].empresa; // Establece el texto visible de la opción
-                                            select_2.appendChild(option); // Agrega la opción al select
-                                        }
-
-
-                                        // CONSULTAR LAS MISIONES
-                                        select_2.addEventListener("change", function() {
-                                            // Aquí puedes ejecutar código cuando el valor del select cambie
-                                            var id_empresa = select_2.value;
-                                            document.getElementById("requisicion").value = "";
-                                            document.getElementById("centrooperaciones").value = "";
-                                            document.getElementById("centrodecosto").value = "";
-                                            document.getElementById("ordenservicio").value = "";
-
-                                            document.getElementById("requisicion").removeAttribute("required");
-                                            document.getElementById("centrooperaciones").removeAttribute("required");
-                                            document.getElementById("centrodecosto").removeAttribute("required");
-                                            document.getElementById("ordenservicio").removeAttribute("required");
-
-
-                                            document.getElementById("label_requisicion").classList.remove("required");;
-                                            document.getElementById("label_centrooperaciones").classList.remove("required");;
-                                            document.getElementById("label_centrodecosto").classList.remove("required");;
-                                            document.getElementById("label_ordenservicio").classList.remove("required");;
-
-
-                                            // document.getElementById("tipo").selectedIndex = 0;
-                                            // document.getElementById("tipocargo").selectedIndex = 0;
-
-                                            fetch('src/ajax/a_agenda_reservas.php', {
-                                                    method: 'POST', // O 'GET' u otro método según tu necesidad
-                                                    headers: {
-                                                        'Content-Type': 'application/json'
-                                                    },
-                                                    body: JSON.stringify({
-                                                        accion: 'consultar_mision',
-                                                        id_empresa: id_empresa,
-                                                        sede: currentA
-                                                    })
-                                                })
-                                                .then(response => response.json())
-                                                .then(data => {
-
-                                                    if (data.datos_fac[0].centrocostos == "1") {
-                                                        document.getElementById("centrodecosto").setAttribute("required", "required");
-                                                        document.getElementById("label_centrodecosto").classList.add("required");
-                                                    }
-
-                                                    if (data.datos_fac[0].ordenservicio == "1") {
-                                                        document.getElementById("ordenservicio").setAttribute("required", "required");
-                                                        document.getElementById("label_ordenservicio").classList.add("required");
-                                                    }
-
-                                                    if (data.datos_fac[0].requisicion == "1") {
-                                                        document.getElementById("requisicion").setAttribute("required", "required");
-                                                        document.getElementById("label_requisicion").classList.add("required");
-                                                    }
-
-                                                    if (data.datos_fac[0].centrooperaciones == "1") {
-                                                        document.getElementById("centrooperaciones").setAttribute("required", "required");
-                                                        document.getElementById("label_centrooperaciones").classList.add("required");
-                                                    }
-
-                                                    if (data.datos_fac[0].autorizadopor == "1") {
-                                                        document.getElementById("autorizacion").setAttribute("required", "required");
-                                                        document.getElementById("label_autorizacion").classList.add("required");
-                                                    }
-
-                                                    var select_3 = document.getElementById("enmision");
-                                                    select_3.innerHTML = '';
-
-                                                    var defaultOption = document.createElement("option");
-                                                    defaultOption.value = "Ninguna"; // Puedes establecer el valor de la opción "Ninguna" según tus necesidades
-                                                    defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
-                                                    select_3.appendChild(defaultOption);
-
-                                                    var mision_empresas_3 = data.mision;
-                                                    for (var i = 0; i < mision_empresas_3.length; i++) {
-                                                        $('#enmision').append($('<option>', {
-                                                            value: mision_empresas_3[i].idempresa,
-                                                            text: mision_empresas_3[i].empresa
-                                                        }));
-                                                    }
-
-
-                                                    // AGREGAR LAS MISIONES A EL SELECT
-                                                    // var select_3 = document.getElementById("enmision");
-                                                    // select_3.innerHTML = '';
-
-                                                    // // Agrega la opción "Ninguna" al principio
-                                                    // var defaultOption = document.createElement("option");
-                                                    // defaultOption.value = ""; // Puedes establecer el valor de la opción "Ninguna" según tus necesidades
-                                                    // defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
-                                                    // select_3.appendChild(defaultOption);
-
-                                                    // var mision_empresas_3 = data.mision;
-                                                    // for (var i = 0; i < mision_empresas_3.length; i++) {
-                                                    //     var option = document.createElement("option"); // Crea un elemento option
-                                                    //     option.value = mision_empresas_3[i].idempresa; // Establece el valor de la opción
-                                                    //     option.text = mision_empresas_3[i].empresa; // Establece el texto visible de la opción
-                                                    //     select_3.appendChild(option); // Agrega la opción al select
-                                                    // }
-
-                                                    // AUTORIZADO POR
-                                                    var autorizado_por = data.autoriza;
-                                                    var select = document.getElementById("autorizacion");
-                                                    select.innerHTML = '';
-
-                                                    // Agrega la opción "Ninguna" al principio
-                                                    var defaultOption = document.createElement("option");
-                                                    defaultOption.value = ""; // Puedes establecer el valor de la opción "Ninguna" según tus necesidades
-                                                    defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
-                                                    select.appendChild(defaultOption);
-
-                                                    for (var i = 0; i < autorizado_por.length; i++) {
-                                                        var option = document.createElement("option"); // Crea un elemento option
-                                                        if (autorizado_por[i].nombre !== null) {
-                                                            option.value = autorizado_por[i].nombre; // Establece el valor de la opción
-                                                            option.text = autorizado_por[i].nombre; // Establece el texto visible de la opción
-                                                            select.appendChild(option); // Agrega la opción al select
-                                                        }
-                                                    }
-
-                                                    // SERVICIOS
-
-                                                    var servicios = data.servicios;
-                                                    // Obtén una referencia al elemento select2
-                                                    var select2 = document.getElementById("servicios");
-
-                                                    // Limpia el contenido actual del select2
-                                                    select2.innerHTML = '';
-
-                                                    // Agrega la opción "Ninguna" al principio
-                                                    var defaultOption = document.createElement("option");
-                                                    defaultOption.value = ""; // Establece el valor de la opción "Ninguna" según tus necesidades
-                                                    defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
-                                                    select2.appendChild(defaultOption);
-
-                                                    // Itera a través del array de servicios y agrega las opciones al select2
-                                                    for (var i = 0; i < servicios.length; i++) {
-                                                        var servicio = servicios[i];
-                                                        var option = document.createElement("option");
-                                                        option.value = servicio.idlistaprecio + '/' + servicio.valor_empresa + '/' + servicio.servicio + '/' + servicio.tiposervicio + '/' + servicio.grupo + '/' + servicio.codigo; // Establece el valor de la opción (puedes cambiarlo según tus necesidades)
-                                                        option.text = servicio.servicio; // Establece el texto visible de la opción (puedes cambiarlo según tus necesidades)
-                                                        select2.appendChild(option); // Agrega la opción al select2
-                                                    }
-
-                                                })
-                                                .catch(error => {
-                                                    // Swal.fire({
-                                                    //     text: "ERROR EN CONSULTAR LAS MISIONES",
-                                                    //     icon: "danger",
-                                                    // });
-                                                });
-                                            // console.log("El valor seleccionado es: " + selectedValue);
-                                        });
-
-
-
-                                        if (Array.isArray(data.paciente) && data.paciente.length === 0) {
-                                            Swal.fire({
-                                                text: "Paciente Nuevo, por favor diligencia todos los datos",
-                                                icon: "warning",
-                                            });
-                                            document.getElementById("primernombre").value = "";
-                                            document.getElementById("paciente_nuevo").value = "si";
-                                            document.getElementById("segundonombre").value = "";
-                                            document.getElementById("primerapellido").value = "";
-                                            document.getElementById("segundoapellido").value = "";
-                                            document.getElementById("email").value = "";
-                                            document.getElementById("direccion").value = "";
-                                            document.getElementById("telefono").value = "";
-                                            document.getElementById("tipodoc").selectedIndex = 0;
-                                            document.getElementById("ciudadorigen").selectedIndex = 0;
-                                            document.getElementById("sexo").selectedIndex = 0;
-                                        } else {
-                                            document.getElementById("paciente_nuevo").value = "no";
-                                            document.getElementById("id_paciente").value = data.paciente[0].idpaciente;
-                                            // TIPOS DE DOCUMENTO
-                                            var valorDeseado = data.paciente[0].tipodoc;
-                                            var selectElement = document.getElementById("tipodoc");
-                                            for (var i = 0; i < selectElement.options.length; i++) {
-                                                if (selectElement.options[i].value === valorDeseado) {
-                                                    selectElement.options[i].selected = true;
-                                                    break;
-                                                }
-                                            }
-
-                                            // DATOS DEL PACIENTE BASICOS
-                                            document.getElementById("primernombre").value = data.paciente[0].primernombre;
-                                            document.getElementById("segundonombre").value = data.paciente[0].segundonombre;
-                                            document.getElementById("primerapellido").value = data.paciente[0].primerapellido;
-                                            document.getElementById("segundoapellido").value = data.paciente[0].segundoapellido;
-                                            document.getElementById("email").value = data.paciente[0].email;
-                                            document.getElementById("direccion").value = data.paciente[0].direccion;
-                                            document.getElementById("telefono").value = data.paciente[0].telefono;
-
-                                            // sexo
-                                            var valorDeseado_1 = data.paciente[0].sexo;
-                                            var selectElement = document.getElementById("sexo");
-                                            for (var i = 0; i < selectElement.options.length; i++) {
-                                                if (selectElement.options[i].value === valorDeseado_1) {
-                                                    selectElement.options[i].selected = true;
-                                                    break;
-                                                }
-                                            }
-                                        }
                                     }
                                 })
                                 .catch(error => {
                                     // console.error('Error:', error);
                                 });
-
                         } else {
-
                             Swal.fire({
-                                text: "Para generar la Reserva, debes de llenar los campos requeridos!!!",
-                                icon: "error",
-                                buttonsStyling: !1,
-                                confirmButtonText: "Ok",
-                                customClass: {
-                                    confirmButton: "btn btn-primary"
-                                }
+                                text: "Debes de llenar los campos requeridos",
+                                icon: "warning",
                             });
                         }
                     }));
