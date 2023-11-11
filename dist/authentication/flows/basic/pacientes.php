@@ -84,7 +84,8 @@ header('Strict-Transport-Security max-age=31536000');
 				<div class="w-lg-500px bg-body rounded shadow-sm p-5 p-lg-15 mx-auto">
 					<div class="card " data-step="1" data-intro="Bienvenido! a ASIS SALAS">
 						<a href="https://unidadso.com.co" class="mb-12">
-							<img alt="Logo" src="assets/media/logos/logo.png" height="60" />
+							<img alt="Logo" src="assets/media/logos/LogoAsisSalas.png" height="60" />
+							<!-- <img alt="Logo" src="assets/media/logos/logo.png" height="60" /> -->
 						</a>
 						<!--begin::Heading-->
 						<div class="text-center mb-10">

@@ -5,7 +5,7 @@
 			session_destroy();
 			?>
 			<script>
-				alert("La sesión a caducado, por favor ingresar nuevamente");
+				alert("La sesión ha caducado, por favor ingresar nuevamente");
 				
 				setTimeout (location.href=" ", 2000);
 			</script>
@@ -35,7 +35,8 @@
 					<!--begin::Logo-->
 					<div class="aside-logo flex-column-auto pt-10 pt-lg-20" id="kt_aside_logo">
 						<a href="<?php echo $b_url_business ?>" target="_blank">
-							<img alt="Logo" src="assets/media/logos/logo.png" height="80px" />
+							<img alt="Logo" src="assets/media/logos/LogoAsisSalas.png" height="80px" />
+							<!-- <img alt="Logo" src="assets/media/logos/Logo.png" height="80px" /> -->
 						</a>
 					</div>
 					<!--end::Logo-->

@@ -35,7 +35,7 @@ if ($formulario == "crear_usuario" && $formulario != "") {
     $rol = $_POST['rol'];
     $usuario = strstr($email, "@", true);
     $contrasena = md5($_POST['password']);
-    
+
     // Crear usuario
     $sql = "INSERT INTO usuarios (usuario, contrasena, tipo_identificacion, identificacion, nombres, apellidos, celular, email, id_rol, estado, fecha) VALUES ('$usuario', '$contrasena','$tipo_identificacion', '$numero_identificacion', '$nombres', '$apellidos', '$celular', '$email', '$rol', '1', NOW())";
     $query = $dbm->prepare($sql);
@@ -74,7 +74,7 @@ if ($formulario == "actualizar_usuario" && $formulario != "") {
 
     $sql = "UPDATE usuarios SET tipo_identificacion = '$tipo_identificacion', identificacion = '$numero_identificacion', nombres = '$nombres', apellidos = '$apellidos', celular = '$celular', email = '$email', nombres = '$nombres', id_rol = '$rol', estado = '$estado', nombres = '$nombres', usuario = '$usuario', contrasena = '$contrasena' WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
-    
+
     if ($query->execute()) {
     ?>
         <script>
@@ -97,4 +97,35 @@ $query = $dbm->prepare($sql);
 $query->execute();
 $usuarios = array_asociativo($query);
 
+
+// Filtrar usuario
+if ($formulario == "filtrar_usuario" && $formulario != "") {
+    $comodin = "";
+    
+    $identificacion = $_POST['numero_identificacion'];
+    $comodin_identificacion = "";
+    if ($identificacion != "") {
+        $comodin_identificacion = " AND identificacion = '$identificacion'";
+        $comodin .= $comodin_identificacion;
+    }
+    
+    $usuario = $_POST['usuario'];
+    $comodin_usuario = "";
+    if ($usuario != "") {
+        $comodin_usuario = " AND usuario = '$usuario'";
+        $comodin .= $comodin_usuario;
+    }
+
+    $nombres = $_POST['nombres'];
+    $comodin_nombres = "";
+    if ($nombres != "") {
+        $comodin_nombres = " AND nombres like '%$nombres%'";
+        $comodin .= $comodin_nombres;
+    }
+
+    $sql = "SELECT * FROM usuarios WHERE 1 = 1 $comodin";
+    $query = $dbm->prepare($sql);
+    $query->execute();
+    $usuarios = array_asociativo($query);
+}
 ?>
