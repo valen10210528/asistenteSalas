@@ -31,14 +31,14 @@ if ($formulario == "crear_sala" && $formulario != "") {
     $aire = $_POST['aire'];
     $video = $_POST['video'];
     $observacion = $_POST['observacion'];
-   
+
     if (isset($_POST['aire'])) {
-        $aire = 'si' ;
+        $aire = 'si';
         # code...
     } else {
         $aire = 'no';
     }
-    
+
     if (isset($_POST['video'])) {
         $video = 'si';
         # code...
@@ -83,18 +83,18 @@ if ($formulario == "crear_sala" && $formulario != "") {
             alert("Error! La sede no se insertó correctamente");
         </script>
 
-<?php
+    <?php
     }
 }
 
 //Consultar Salas
 
 //if ($formulario == "crear_sala" && $formulario != "") {
-        
-        $sql = "SELECT salas.*,sedes.nombre AS nombre_sede FROM `salas`,`sedes` WHERE salas.id_sede=sedes.id";
-        $query = $dbm->prepare($sql);
-        $query->execute();
-        $salas2 = array_asociativo($query);
+
+$sql = "SELECT salas.*,sedes.nombre AS nombre_sede FROM `salas`,`sedes` WHERE salas.id_sede=sedes.id";
+$query = $dbm->prepare($sql);
+$query->execute();
+$salas2 = array_asociativo($query);
 //}
 
 //Actualizar Sala
@@ -119,7 +119,7 @@ if ($formulario == "actualizar_sala" && $formulario != "") {
     
     WHERE id ='$id' ";
     $query = $dbm->prepare($sql);
-    if ($query->execute()) { 
+    if ($query->execute()) {
     ?>
         <script>
             alert("Sala actualizada correctamente");

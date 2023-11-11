@@ -214,7 +214,8 @@
 									</div>
 								</div>
 								<div id="crear_reserva" style="display: none;">
-									<h2>hola</h2>
+									<select required class=" form-select form-select-solid" name="id_sala" id="id_sala" data-control="select2" data-close-on-select="false" data-placeholder="No aplica" data-allow-clear="true" data-dropdown-parent="#kt_modal_add_event">
+									</select>
 								</div>
 							</div>
 							<div class="modal-footer flex-center">

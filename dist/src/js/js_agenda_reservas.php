@@ -194,36 +194,27 @@
                                     // console.log();
                                     if (data.mensaje == "ok") {
                                         document.getElementById('crear_reserva').style.display = 'block';
+                                        var salas = data.salas_disponibles;
+                                        var select2 = document.getElementById("id_sala");
+                                        select2.innerHTML = '';
+                                        var defaultOption = document.createElement("option");
+                                        defaultOption.value = ""; // Establece el valor de la opción "Ninguna" según tus necesidades
+                                        defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
+                                        select2.appendChild(defaultOption);
+
+                                        for (var i = 0; i < salas.length; i++) {
+                                            var sala = salas[i];
+                                            var option = document.createElement("option");
+                                            option.value = sala.id; // Establece el valor de la opción (puedes cambiarlo según tus necesidades)
+                                            option.text = sala.nombre + '. Bloque: ' + sala.bloque + ' . Capacidad de estudiantes: ' + sala.capacidad_estudiantes + ' . Aire: ' + sala.aire_acondicionado + ' . Video Beam: ' + sala.video_beam; // Establece el texto visible de la opción (puedes cambiarlo según tus necesidades)
+                                            select2.appendChild(option); // Agrega la opción al select2
+                                        }
                                     } else {
                                         Swal.fire({
                                             text: "No hay disponibilidad para la hora de inicio seleccionada.",
                                             icon: "warning",
                                         });
                                     }
-                                    // var salas = data.mensaje;
-                                    // var select2 = document.getElementById("servicios");
-                                    // select2.innerHTML = '';
-                                    // var defaultOption = document.createElement("option");
-                                    // defaultOption.value = ""; // Establece el valor de la opción "Ninguna" según tus necesidades
-                                    // defaultOption.text = "Ninguna"; // Texto visible de la opción "Ninguna"
-                                    // select2.appendChild(defaultOption);
-
-                                    // for (var i = 0; i < servicios.length; i++) {
-                                    //     var servicio = servicios[i];
-                                    //     var option = document.createElement("option");
-                                    //     option.value = servicio.idlistaprecio + '/' + servicio.valor_empresa + '/' + servicio.servicio + '/' + servicio.tiposervicio + '/' + servicio.grupo + '/' + servicio.codigo; // Establece el valor de la opción (puedes cambiarlo según tus necesidades)
-                                    //     option.text = servicio.servicio; // Establece el texto visible de la opción (puedes cambiarlo según tus necesidades)
-                                    //     select2.appendChild(option); // Agrega la opción al select2
-                                    // }
-                                    // if (data.mensaje ) {
-                                    //     Swal.fire({
-                                    //         text: "No hay disponibilidad para la hora de inicio seleccionada.",
-                                    //         icon: "warning",
-                                    //     });
-                                    // } else {
-                                    //     document.getElementById('crear_orden').style.display = 'block';
-
-                                    // }
                                 })
                                 .catch(error => {
                                     console.error('Error:', error);
