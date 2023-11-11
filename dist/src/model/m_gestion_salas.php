@@ -31,7 +31,7 @@ if ($formulario == "crear_sala" && $formulario != "") {
     $numero_estudiantes = $_POST['num_estudiantes'];
     $aire = $_POST['aire'];
     $video = $_POST['video'];
-   
+
 
     if (isset($_POST['aire'])) {
         $aire = 'si';
@@ -73,7 +73,11 @@ if ($formulario == "crear_sala" && $formulario != "") {
         // EJECUTÓ BIEN
 ?>
         <script>
-            alert("La Sala se Creo Correctamente");
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success"
+            });
         </script>
 
     <?php
@@ -144,7 +148,7 @@ if ($formulario == "actualizar_sala" && $formulario != "") {
     WHERE id ='$id' ";
 
     $query = $dbm->prepare($sql);
-   
+
     if ($query->execute()) {
     ?>
         <script>
