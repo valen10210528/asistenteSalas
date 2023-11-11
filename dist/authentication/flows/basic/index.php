@@ -21,7 +21,7 @@ header('Strict-Transport-Security max-age=31536000');
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="LOGIN | ASIS SALAS" />
 	<meta property="og:site_name" content="ASIS SALAS" />
-	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
+	<link rel="shortcut icon" href="assets/media/logos/LogoAsisSalas.ico" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
