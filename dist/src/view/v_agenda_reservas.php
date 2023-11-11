@@ -217,12 +217,12 @@
 								<input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
 									<div class="row">
 										<div class="col col-sm-6">
-										<label class="form-label fs-5 fw-bold my-3 "> Salas disponibles</label>
+										<label class="form-label fs-5 fw-bold my-3 required "> Salas disponibles</label>
 											<select required class=" form-select form-select-solid" name="id_sala" id="id_sala" data-control="select2" data-close-on-select="false" data-placeholder="Salas disponibles" data-allow-clear="true" data-dropdown-parent="#kt_modal_add_event">
 											</select>
 										</div>
 										<div class="col col-sm-6">
-										<label class="form-label fs-5 fw-bold my-3 "> Asignatura:</label>
+										<label class="form-label fs-5 fw-bold my-3 required"> Asignatura:</label>
 											<select required class=" form-select form-select-solid" name="id_asignatura" id="id_asignatura" data-control="select2" data-close-on-select="false" data-placeholder="Asignatura a dictar" data-allow-clear="true" data-dropdown-parent="#kt_modal_add_event">
 												<option value="" selected> Seleccione</option>
 												<?php
