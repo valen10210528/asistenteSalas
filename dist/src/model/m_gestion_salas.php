@@ -26,11 +26,12 @@ if ($formulario == "crear_sala" && $formulario != "") {
 
     $nombre_sede = $_POST['id_sede'];
     $sala = $_POST['sala'];
+    $observacion = $_POST['observacion'];
     $bloque = $_POST['bloque'];
     $numero_estudiantes = $_POST['num_estudiantes'];
     $aire = $_POST['aire'];
     $video = $_POST['video'];
-    $observacion = $_POST['observacion'];
+   
 
     if (isset($_POST['aire'])) {
         $aire = 'si';
@@ -72,7 +73,7 @@ if ($formulario == "crear_sala" && $formulario != "") {
         // EJECUTÓ BIEN
 ?>
         <script>
-            alert("La sede se insertó correctamente");
+            alert("La Sala se Creo Correctamente");
         </script>
 
     <?php
@@ -80,7 +81,7 @@ if ($formulario == "crear_sala" && $formulario != "") {
         // ERROR DOS
     ?>
         <script>
-            alert("Error! La sede no se insertó correctamente");
+            alert("Error! La Sala no se Creo correctamente");
         </script>
 
     <?php
@@ -102,27 +103,52 @@ if ($formulario == "actualizar_sala" && $formulario != "") {
 
     $nombre_sede = $_POST['id_sede'];
     $sala = $_POST['sala'];
+    $estado = $_POST['estado'];
+    $observacion = $_POST['observacion'];
     $bloque = $_POST['bloque'];
     $numero_estudiantes = $_POST['num_estudiantes'];
     $aire = $_POST['aire'];
     $video = $_POST['video'];
-    $observacion = $_POST['observacion'];
+    $id = $_POST['id'];
+
+    if (isset($_POST['aire'])) {
+        $aire = 'si';
+        # code...
+    } else {
+        $aire = 'no';
+    }
+
+    if (isset($_POST['video'])) {
+        $video = 'si';
+        # code...
+    } else {
+        $video = 'no';
+    }
+
+    if (isset($_POST['estado'])) {
+        $estado = 'Acivo';
+        # code...
+    } else {
+        $estado = 'Inactivo';
+    }
 
     $sql = "UPDATE salas SET 
-    nombre = '$nombre_sede', 
-    sala = '$sala', 
-    bloque = '$bloque',  
-    capacidad_estudiantes= '$numero_estudiantes'
-    aire_acondicionado = '$aire', 
-    video_beam = '$video', 
-    observacion = '$observacion',
-    
+    nombre = '$sala', 
+    estado = '$estado',
+    id_sede = '$nombre_sede',
+    bloque = '$bloque',
+    capacidad_estudiantes = '$numero_estudiantes',
+    aire_acondicionado = '$aire',
+    video_beam = '$video',
+    observacion = '$observacion'
     WHERE id ='$id' ";
+
     $query = $dbm->prepare($sql);
+   
     if ($query->execute()) {
     ?>
         <script>
-            alert("Sala actualizada correctamente");
+            alert("La Sala se Actualizo Correctamente");
         </script>
     <?php
     } else {
@@ -135,6 +161,7 @@ if ($formulario == "actualizar_sala" && $formulario != "") {
     }
 }
 
+//Consultar sedes
 $sql = "SELECT * FROM sedes WHERE estado = 1";
 $query = $dbm->prepare($sql);
 $query->execute();
