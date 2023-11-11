@@ -26,44 +26,36 @@ $asignaturas  = array_asociativo($query);
 
 //FILTRO
 if ($formulario == "filtrar" || $formulario == "") {
-	$comodin = '';
-	//llenar CALENDARIO
-	// $id_personal_buscar = $_SESSION['id_usuario'];
-	if (!empty($conexiones_sedes_filtro)) {
-		$agendas_totales = array(); // Arreglo para almacenar las agendas de todas las sedes
+	$sql = "SELECT 
+	CONCAT('Reserva exitosa #', reservas.id) as title,
+	CONCAT(salas.nombre, '. Bloque: ', salas.bloque,'. Capacidad de estudiantes: ', salas.capacidad_estudiantes, '. Aire: ', salas.aire_acondicionado, '. Video Beam: ', salas.video_beam) as description,
+	sedes.nombre as location,
+	CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_inicio) as start,
+	CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_fin) as end
+	FROM 
+	reservas, salas, sedes
+	WHERE reservas.id_sala = salas.id
+	AND reservas.id_sede = sedes.id";
 
-		foreach ($conexiones_sedes_filtro as $key => $conexion_filtro) {
-			/* DESC SE AGREGA LA OBSERVACION CONCATENADA CON EL NOMBRE DE LA SEDE SOLO SI NO ES NULO ESE VALOR*/
-			/* SERVICIO SE PUEDEN CAMBIAR LOS SIGNOS POR LOS QUE SE SEPARA EL SERVICIO*/
-			$sql = "SQL";
+	$disponibilidad_prof = $dbm->prepare($sql);
+	$disponibilidad_prof->execute();
 
-			$disponibilidad_prof = $conexion_filtro->prepare($sql);
-			$disponibilidad_prof->execute();
-			// var_dump($sql);
+	$agendas_sede = array(); // Arreglo para almacenar las agendas de una sede específica
 
-			$agendas_sede = array(); // Arreglo para almacenar las agendas de una sede específica
-
-			while ($fila = $disponibilidad_prof->fetch(PDO::FETCH_ASSOC)) {
-				$agendas_sede[] = $fila; // Agregar cada fila (agenda) al arreglo de la sede
-			}
-
-			// Agregar el arreglo de agendas de la sede actual al arreglo de agendas totales
-			$agendas_totales = array_merge($agendas_totales, $agendas_sede);
-		}
-
-		$array_total = array(); // Arreglo para almacenar las agendas de todas las sedes
-		foreach ($agendas_totales as $key => $value) {
-			if ($value['start'] || $value['end']) {
-				// echo "hpña";
-				$value['start'] = validarfecha_hora($value['start'], 'solo_hora');
-				$value['end'] = validarfecha_hora($value['end'], 'solo_hora');
-				$value['end'] = validarfecha_hora($value['end'], 'solo_hora');
-				// var_dump($value);
-				$array_total[] = $value;
-			}
-		}
-		$disponibilidad_profesional = json_encode($array_total);
+	while ($fila = $disponibilidad_prof->fetch(PDO::FETCH_ASSOC)) {
+		$agendas_sede[] = $fila; // Agregar cada fila (agenda) al arreglo de la sede
 	}
+
+	$array_total = array(); // Arreglo para almacenar las agendas de todas las sedes
+	foreach ($agendas_sede as $key => $value) {
+		if ($value['start'] || $value['end']) {
+			$value['start'] = validarfecha_hora($value['start'], 'solo_hora');
+			$value['end'] = validarfecha_hora($value['end'], 'solo_hora');
+			$value['end'] = validarfecha_hora($value['end'], 'solo_hora');
+			$array_total[] = $value;
+		}
+	}
+	$disponibilidad_profesional = json_encode($array_total);
 	// var_dump($disponibilidad_profesional);
 	// die;
 }

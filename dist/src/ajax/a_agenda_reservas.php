@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($data['accion'] == "consulta_sala") {
 
-        $id_sede = $data['sede'];
+        $id_sede = explode('/', $data['sede'])[0];
         $fecha_inicio = $data['fecha_inicio'];
         $fecha_fin = $data['fecha_inicio'];
         $hora_inicio = $data['hora_inicio'];
@@ -60,8 +60,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response = array('mensaje' => $mensaje, 'salas_disponibles' => $salas_disponibles);
     }
 
-    if ($data['accion'] == "generar_cita") {
-        $response = array('resultado' => 'error_no_guardado');
+    if ($data['accion'] == "generar_reserva") {
+
+        $id_sede = explode('/', $data['data']['calendar_event_name'])[0];
+        $nombre_sede = explode('/', $data['data']['calendar_event_name'])[1];
+        $fecha_reserva = $fecha_fin = $data['data']['calendar_event_start_date'];
+        $hora_inicio = $data['data']['calendar_event_start_time'];
+        $hora_fin = $data['data']['calendar_event_end_time'];
+        $id_sala = explode('/', $data['data']['id_sala'])[0];
+        $detalle_sala = explode('/', $data['data']['id_sala'])[1];
+        $id_asignatura = $data['data']['id_asignatura'];
+        $id_usuario = $data['data']['id_usuario'];
+        $detalle = "La reserva ha sido generada de manera exitosa, los datos de la reserva son los siguientes: 
+        $detalle_sala
+        Sede: $nombre_sede 
+        Fecha inicio: $fecha_reserva $hora_inicio - Fecha Fin: $fecha_reserva $hora_fin ";
+        $sql = "INSERT INTO 
+                reservas
+                    ( nombre, estado, id_sede, id_usuario, id_sala, fecha_reserva, hora_reserva_inicio, hora_reserva_fin, observacion_reserva, id_asignaturas) 
+                VALUES 
+                    ('Reserva exitosa','1','$id_sede','$id_usuario','$id_sala','$fecha_reserva','$hora_inicio','$hora_fin','Observacion: $detalle','$id_asignatura')";
+        $query = $dbm_mysql->prepare($sql);
+        if ($query->execute()) {
+            $id_ultimo = $dbm_mysql->lastInsertId();
+            $response = array('mensaje' => 'ok', 'numero_reserva' =>$id_ultimo, 'title' => 'Reserva exitosa #' . $id_ultimo, 'description' => $detalle_sala, 'location' => 'Sede: '.$nombre_sede);
+        } else {
+            $response = array('mensaje' => 'no',);
+        }
     }
     echo json_encode($response);
 } else {

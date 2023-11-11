@@ -131,7 +131,7 @@
 												<?php
 												foreach ($sedes as $key) {
 												?>
-													<option value="<?php echo $key['id'] ?>"><?php echo $key['nombre'] ?></option>
+													<option value="<?php echo $key['id'].'/'.$key['nombre'] ?>"><?php echo $key['nombre'] ?></option>
 												<?php
 												}
 												?>
@@ -214,6 +214,7 @@
 									</div>
 								</div>
 								<div id="crear_reserva" style="display: none;">
+								<input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
 									<div class="row">
 										<div class="col col-sm-6">
 										<label class="form-label fs-5 fw-bold my-3 "> Salas disponibles</label>
@@ -272,7 +273,7 @@
 							</div>
 							<!--end::Edit-->
 							<!--begin::Edit-->
-							<div class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger me-2" data-bs-toggle="tooltip" data-bs-dismiss="click" title="Delete Event" id="kt_modal_view_event_delete">
+							<div class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger me-2" style="display: none;" data-bs-toggle="tooltip" data-bs-dismiss="click" title="Delete Event" id="kt_modal_view_event_delete">
 								<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
 								<span class="svg-icon svg-icon-2">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

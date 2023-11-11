@@ -204,8 +204,9 @@
 
                                         for (var i = 0; i < salas.length; i++) {
                                             var sala = salas[i];
+                                            var detalle = sala.nombre + '. Bloque: ' + sala.bloque + ' . Capacidad de estudiantes: ' + sala.capacidad_estudiantes + ' . Aire: ' + sala.aire_acondicionado + ' . Video Beam: ' + sala.video_beam;
                                             var option = document.createElement("option");
-                                            option.value = sala.id; // Establece el valor de la opción (puedes cambiarlo según tus necesidades)
+                                            option.value = sala.id + '/' + detalle; // Establece el valor de la opción (puedes cambiarlo según tus necesidades)
                                             option.text = sala.nombre + '. Bloque: ' + sala.bloque + ' . Capacidad de estudiantes: ' + sala.capacidad_estudiantes + ' . Aire: ' + sala.aire_acondicionado + ' . Video Beam: ' + sala.video_beam; // Establece el texto visible de la opción (puedes cambiarlo según tus necesidades)
                                             select2.appendChild(option); // Agrega la opción al select2
                                         }
@@ -268,8 +269,6 @@
                             cancelButtonText: 'Cancelar'
                         }).then((result) => {
                             if (result.isConfirmed) {
-
-
                                 // AGREGAR TODOS LOS DATOS DEL FORMULARIO A DATOSOBJECTO
                                 var datosObjeto = {};
                                 $.each(datos, function(index, campo) {
@@ -298,7 +297,7 @@
                                             'Content-Type': 'application/json'
                                         },
                                         body: JSON.stringify({
-                                            accion: 'generar_cita',
+                                            accion: 'generar_reserva',
                                             data: datosObjeto
                                         })
                                     })
@@ -306,11 +305,11 @@
                                     .then(data => {
                                         Swal.close();
                                         // console.log(data.resultado);
-                                        if (data.resultado == "ok") {
+                                        if (data.mensaje == "ok") {
                                             // Swal.fire('¡Cita generada!!', 'La cita se ha generado exitosamente', 'success');
                                             setTimeout((function() {
                                                 _.removeAttribute("data-kt-indicator"), Swal.fire({
-                                                    text: "!Reserva generada!! La reserva se ha generado exitosamente",
+                                                    text: "!Reserva generada!! La reserva se ha generado exitosamente. El numero de reserva es:" + data.numero_reserva,
                                                     icon: "success",
                                                     buttonsStyling: !1,
                                                     confirmButtonText: "Ok, got it!",
@@ -332,11 +331,9 @@
                                                         }
 
                                                         v.hide(), e.dismiss;
-                                                        document.getElementById('crear_orden').style.display = 'none';
-                                                        var tipocargo = $('#tipocargo');
-                                                        tipocargo.val([]).trigger('change');
-                                                        var servicios = $('#servicios');
-                                                        servicios.val([]).trigger('change');
+                                                        document.getElementById('crear_reserva').style.display = 'none';
+                                                        var salas = $('#salas');
+                                                        salas.val([]).trigger('change');
 
                                                         e.addEvent({
                                                             id: V(),
@@ -347,18 +344,15 @@
                                                             end: s,
                                                             allDay: t
                                                         }), e.render(), p.reset();
-                                                        // console.log("Antes de abrir la nueva ventana");
-
-                                                        var url = " /dist/index_impresion.php?url_id=orden_sede_detalle_impresion&id=" + data.orden + "&sede=" + data.sede;
-                                                        var ventanaNueva = window.open(url, "_blank");
-
                                                     }
                                                 }))
                                             }), 1e3);
-                                        } else if (data.resultado == "error_conexion") {
-                                            Swal.fire('¡ERROR CONEXION!!', 'La sede ' + data.sede + ' se encuentra sin conexión o con intermitencias, por favor comunicate con sistemas si el error persiste ', 'error');
                                         } else {
-                                            Swal.fire('¡ERROR!!', 'Por favor comunicarse con sistemas, ' + data.resultado, 'error');
+                                            Swal.fire({
+                                                title: "Error!!",
+                                                text: "La reserva no ha podido ser generada de manera exitosa",
+                                                icon: "error"
+                                            });
                                         }
                                     })
                                     .catch(error => {});
