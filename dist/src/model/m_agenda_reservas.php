@@ -27,15 +27,16 @@ $asignaturas  = array_asociativo($query);
 //FILTRO
 if ($formulario == "filtrar" || $formulario == "") {
 	$sql = "SELECT 
-	CONCAT('Reserva exitosa #', reservas.id) as title,
-	CONCAT(salas.nombre, '. Bloque: ', salas.bloque,'. Capacidad de estudiantes: ', salas.capacidad_estudiantes, '. Aire: ', salas.aire_acondicionado, '. Video Beam: ', salas.video_beam) as description,
-	sedes.nombre as location,
-	CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_inicio) as start,
-	CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_fin) as end
-	FROM 
-	reservas, salas, sedes
-	WHERE reservas.id_sala = salas.id
-	AND reservas.id_sede = sedes.id";
+			CONCAT('Reserva exitosa #', reservas.id) as title,
+			CONCAT(salas.nombre, '. Bloque: ', salas.bloque,'. Capacidad de estudiantes: ', salas.capacidad_estudiantes, '. Aire: ', salas.aire_acondicionado, '. Video Beam: ', salas.video_beam, '. Asignatura: ', asignaturas.nombre) as description,
+			sedes.nombre as location,
+			CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_inicio) as start,
+			CONCAT(reservas.fecha_reserva, ' ', reservas.hora_reserva_fin) as end
+			FROM 
+			reservas, salas, sedes, asignaturas
+			WHERE reservas.id_sala = salas.id
+			AND reservas.id_sede = sedes.id
+			AND asignaturas.id = reservas.id_asignaturas";
 
 	$disponibilidad_prof = $dbm->prepare($sql);
 	$disponibilidad_prof->execute();

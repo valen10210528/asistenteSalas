@@ -344,6 +344,7 @@
                                                             end: s,
                                                             allDay: t
                                                         }), e.render(), p.reset();
+                                                        document.getElementById('crear_reserva').style.display = 'none';
                                                     }
                                                 }))
                                             }), 1e3);
@@ -571,7 +572,7 @@
                                     }
                                 })
                                 e.value ? (p.reset(), v.hide()) : "confirm" === e.dismiss,
-                                    document.getElementById('crear_orden').style.display = 'none';
+                                    document.getElementById('crear_reserva').style.display = 'none';
                             }))
                     })), k.addEventListener("click", (function(e) {
                         e.preventDefault(), Swal.fire({
@@ -596,7 +597,7 @@
                                 }
                             })
                             e.value ? (p.reset(), v.hide()) : "confirm" === e.dismiss,
-                                document.getElementById('crear_orden').style.display = 'none';
+                                document.getElementById('crear_reserva').style.display = 'none';
 
                         }))
                     })), (e => {

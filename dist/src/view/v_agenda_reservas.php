@@ -228,7 +228,7 @@
 												<?php
 												foreach ($asignaturas as $key) {
 												?>
-													<option value="<?php echo $key['id'] ?>"> <?php echo $key['nombre'] ?></option>
+													<option value="<?php echo $key['id'] .'/'.$key['nombre']?>"> <?php echo $key['nombre'] ?></option>
 												<?php
 												}
 

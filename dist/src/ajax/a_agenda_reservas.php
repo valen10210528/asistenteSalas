@@ -69,7 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hora_fin = $data['data']['calendar_event_end_time'];
         $id_sala = explode('/', $data['data']['id_sala'])[0];
         $detalle_sala = explode('/', $data['data']['id_sala'])[1];
-        $id_asignatura = $data['data']['id_asignatura'];
+        $id_asignatura = explode('/', $data['data']['id_asignatura'])[0];
+        $nombre_asignatura = explode('/', $data['data']['id_asignatura'])[1];
         $id_usuario = $data['data']['id_usuario'];
         $detalle = "La reserva ha sido generada de manera exitosa, los datos de la reserva son los siguientes: 
         $detalle_sala
@@ -83,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = $dbm_mysql->prepare($sql);
         if ($query->execute()) {
             $id_ultimo = $dbm_mysql->lastInsertId();
-            $response = array('mensaje' => 'ok', 'numero_reserva' =>$id_ultimo, 'title' => 'Reserva exitosa #' . $id_ultimo, 'description' => $detalle_sala, 'location' => 'Sede: '.$nombre_sede);
+            $response = array('mensaje' => 'ok', 'numero_reserva' =>$id_ultimo, 'title' => 'Reserva exitosa #' . $id_ultimo, 'description' => $detalle_sala.' . Asignatura: '.$nombre_asignatura, 'location' => 'Sede: '.$nombre_sede);
         } else {
             $response = array('mensaje' => 'no',);
         }
