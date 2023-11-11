@@ -9,6 +9,7 @@ header('Strict-Transport-Security max-age=31536000');
 <html lang="es">
 <!--begin::Head-->
 
+
 <head>
 	<?php
 	ini_set("session.cookie_lifetime", "10800");
