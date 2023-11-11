@@ -4,3 +4,4 @@ seguridad
 #Ignoramos archivos de conexion 
 conexion.php
 verificar.php
+dist/seguridad/conexion.php
