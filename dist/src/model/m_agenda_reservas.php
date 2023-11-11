@@ -18,6 +18,12 @@ $query->execute();
 $sedes = array_asociativo($query);
 $disponibilidad_profesional = '{}';
 
+$sql = "SELECT * FROM asignaturas WHERE estado = 1";
+$query = $dbm->prepare($sql);
+$query->execute();
+$asignaturas  = array_asociativo($query);
+
+
 //FILTRO
 if ($formulario == "filtrar" || $formulario == "") {
 	$comodin = '';
