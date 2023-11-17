@@ -25,7 +25,7 @@ header('Strict-Transport-Security max-age=31536000');
 	<meta property="og:site_name" content="ASIS SALAS" />
 	<meta property="og:image" content="https://unidadso.com.co/web/wp-content/uploads/2020/06/Logo-Unidad-de-Salud-Ocupacional.png" />
 	<link rel="canonical" href=" " />
-	<link rel="shortcut icon" href="assets/media/logos/logo.ico" />
+	<link rel="shortcut icon" href="assets/media/logos/LogoAsisSalas.ico" />
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<!--end::Fonts-->
