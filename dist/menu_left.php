@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<?php
-			if ($_SESSION["id_rol"] == "2") {
+			if ($_SESSION["id_rol"] == "1") {
 			?>
 
 
