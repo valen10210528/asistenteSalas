@@ -69,8 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hora_fin = $data['data']['calendar_event_end_time'];
         $id_sala = explode('/', $data['data']['id_sala'])[0];
         $detalle_sala = explode('/', $data['data']['id_sala'])[1];
-        $id_asignatura = explode('/', $data['data']['id_asignatura'])[0];
-        $nombre_asignatura = explode('/', $data['data']['id_asignatura'])[1];
+        // $id_asignatura = explode('/', $data['data']['id_asignatura'])[0];
+        // $nombre_asignatura = explode('/', $data['data']['id_asignatura'])[1];
+        $nombre_asignatura = $data['data']['id_asignatura'];
         $id_usuario = $data['data']['id_usuario'];
         $detalle = "La reserva ha sido generada de manera exitosa, los datos de la reserva son los siguientes: 
         $detalle_sala
@@ -78,9 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Fecha inicio: $fecha_reserva $hora_inicio - Fecha Fin: $fecha_reserva $hora_fin ";
         $sql = "INSERT INTO 
                 reservas
-                    ( nombre, estado, id_sede, id_usuario, id_sala, fecha_reserva, hora_reserva_inicio, hora_reserva_fin, observacion_reserva, id_asignaturas) 
+                    ( nombre, estado, id_sede, id_usuario, id_sala, fecha_reserva, hora_reserva_inicio, hora_reserva_fin, observacion_reserva, asignatura) 
                 VALUES 
-                    ('Reserva exitosa','1','$id_sede','$id_usuario','$id_sala','$fecha_reserva','$hora_inicio','$hora_fin','Observacion: $detalle','$id_asignatura')";
+                    ('Reserva exitosa','1','$id_sede','$id_usuario','$id_sala','$fecha_reserva','$hora_inicio','$hora_fin','Observacion: $detalle','$nombre_asignatura')";
         $query = $dbm_mysql->prepare($sql);
         if ($query->execute()) {
             $id_ultimo = $dbm_mysql->lastInsertId();
