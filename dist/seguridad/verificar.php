@@ -69,7 +69,7 @@ ini_set('display_errors', '1');
 			if ($datos !== false || $datos != "") {
 				$_SESSION["id_usuario"] = $datos["id"];
 				$_SESSION["identificacion"] = $datos["identificacion"];
-				$_SESSION["nombre"] = $datos["nombre"];
+				$_SESSION["nombre"] = $datos["nombres"].' '.$datos["apellidos"];
 				$_SESSION["id_rol"] = $datos["id_rol"];
 	?>
 				<script type="text/javascript">
